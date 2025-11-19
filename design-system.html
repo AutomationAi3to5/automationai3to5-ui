@@ -43,6 +43,27 @@
       <div class="card-footer"><button class="btn btn-primary btn-small">Découvrir</button></div>
     </div>
   </main>
+  <div id="modalDemoBg" class="modal-bg">
+  <div class="modal">
+    <div class="modal-header">Confirmer l'action</div>
+    <div>“Voulez-vous vraiment poursuivre cette action ?”</div>
+    <div class="modal-actions">
+      <button class="btn btn-secondary" onclick="closeModalDemo()">Annuler</button>
+      <button class="btn btn-primary" onclick="closeModalDemo()">Confirmer</button>
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary" onclick="openModalDemo()">Ouvrir un modal</button>
+<script>
+function openModalDemo(){ 
+  document.getElementById('modalDemoBg').style.display='flex';
+  document.querySelector('.modal').style.display='block';
+}
+function closeModalDemo(){
+  document.getElementById('modalDemoBg').style.display='none';
+  document.querySelector('.modal').style.display='none';
+}
+</script>
 </body>
 </html>
 
