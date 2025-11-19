@@ -36,6 +36,7 @@
   <header style="padding: 2.2rem 2.5rem; background: var(--dark); border-bottom: 1.5px solid var(--secondary); display:flex; align-items:center;">
     <img src="img/AI3to5_Logo.png" style="height:2.55rem; margin-right:1.3rem;">
     <h1>AutomationAI3to5 Design System <span style="font-size:.65em; font-weight:400; color:var(--cyan)">UI Kit v1</span></h1>
+    <button class="btn btn-secondary" onclick="toggleTheme()" id="themeBtn">Passer en mode clair</button>
   </header>
   <div class="layout">
     <!-- SIDEBAR -->
@@ -140,6 +141,22 @@
     </tr>
   </tbody>
 </table>
+
+      <h2>Typographie & Tokens</h2>
+<h1>Titre H1 – Font 2.1rem</h1>
+<h2>Titre H2 – Font 1.6rem</h2>
+<h3>Titre H3 – Font 1.23rem</h3>
+<p>Texte normal paragraphe. <a href="#">Lien cliquable</a>.</p>
+<p style="color:var(--text-secondary);">Sous-titre, note ou aide (text-secondary).</p>
+<div style="margin: 1em 0;"><span style="background: var(--cyan); color: var(--darker); padding: .4em 1em; border-radius: 6px;">Token color: cyan (#06b6d4)</span></div>
+
+      <h2>Badges & Tags</h2>
+<span class="badge badge-success">Succès</span>
+<span class="badge badge-danger">Erreur</span>
+<span class="badge badge-warning">Avertissement</span>
+<span class="badge badge-info">Info</span>
+
+
 <!-- Documentation inline -->
 <div style="color:var(--text-secondary);font-size:.95em;margin:1em 0 2em;"><b>⚡ Datatable :</b> Style ta table avec “.datatable” (borders, padding, responsive). Utilise .badge pour indiquer statut.</div>
     </main>
@@ -170,6 +187,19 @@ function setTab(i){
   document.querySelectorAll('.tab').forEach((t,idx)=>t.classList.toggle('active',i==idx));
   for(let j=1;j<=3;j++)document.getElementById('tabContent'+j).style.display=i+1==j?'':'none';
 }
+  function toggleTheme() {
+  document.body.classList.toggle("light-mode");
+  document.getElementById("themeBtn").textContent = document.body.classList.contains('light-mode')
+    ? "Passer en mode sombre"
+    : "Passer en mode clair";
+}
+// CSS : dans design-system.css
+body.light-mode { background: #fafafe; color: #111;}
+body.light-mode .card, body.light-mode .sidebar { background: #fff; color: #222; }
+body.light-mode .sidebar-link { color: #6366f1; background: #f3f4f6;}
+body.light-mode .sidebar-link.active { background: #c7d2fe; }
+body.light-mode h1, body.light-mode h2, body.light-mode h3 { color: #222;}
+
 </script>
 </body>
 </html>
