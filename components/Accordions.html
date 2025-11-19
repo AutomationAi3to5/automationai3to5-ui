@@ -1,0 +1,17 @@
+<div class="accordion" tabindex="0" aria-label="Section FAQ">
+  <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false" aria-controls="panel-1" id="accordion-1">
+    + Comment fonctionne ce composant ?
+  </button>
+  <div class="accordion-panel" id="panel-1" style="display:none;">
+    <div class="card">Texte de la réponse/explication ici.</div>
+  </div>
+</div>
+<script>
+function toggleAccordion(btn){
+  const panel = btn.nextElementSibling;
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  panel.style.display = expanded ? 'none' : 'block';
+  btn.focus();
+}
+</script>
