@@ -51,3 +51,11 @@ a:hover { color: var(--cyan);}
   .datatable th {display:none;}
   .datatable td {border: none; border-bottom: 1px solid var(--secondary);}
 }
+.badge {
+  display:inline-block;padding:.42em 1.1em; border-radius:9px; font-size:.98em;font-weight:600; margin-right:.55em;margin-bottom:.45em;
+}
+.badge-success{ background:#22c55e; color:#fff;}
+.badge-danger{ background:var(--pink); color:#fff;}
+.badge-warning{background:var(--accent-gold);color:#594006;}
+.badge-info{ background:var(--cyan); color:var(--darker);}
+
