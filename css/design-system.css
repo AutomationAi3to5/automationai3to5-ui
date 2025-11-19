@@ -31,3 +31,23 @@ h1, h2, h3, h4 {
 a { color: var(--primary); text-decoration: none; transition: color 0.3s;}
 a:hover { color: var(--cyan);}
 
+.datatable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2.2em;
+}
+.datatable th, .datatable td {
+  border-bottom: 1.5px solid var(--secondary);
+  padding: .65em 1.1em;
+  text-align: left;
+}
+.datatable th { color: var(--primary); background: var(--darker);}
+.datatable tr:hover { background: rgba(99,102,241,0.08);}
+@media (max-width: 650px) {
+  .datatable, .datatable thead, .datatable tbody, .datatable tr, .datatable th, .datatable td {
+    display: block;
+    width: 100%;
+  }
+  .datatable th {display:none;}
+  .datatable td {border: none; border-bottom: 1px solid var(--secondary);}
+}
