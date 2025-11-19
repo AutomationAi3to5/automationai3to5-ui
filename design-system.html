@@ -1,1 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AutomationAI3to5 UI – Design System Demo</title>
+  <link rel="stylesheet" href="css/design-system.css" />
+  <link rel="stylesheet" href="css/buttons.css" />
+  <link rel="stylesheet" href="css/cards.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+</head>
+<body>
+  <header style="padding: 2.2rem 2.5rem; background: var(--dark); border-bottom: 1.5px solid var(--secondary); display:flex; align-items:center;">
+    <img src="img/AI3to5_Logo.png" style="height:2.55rem; margin-right:1.3rem;">
+    <h1>AutomationAI3to5 Design System <span style="font-size:.65em; font-weight:400; color:var(--cyan)">UI Kit v1</span></h1>
+  </header>
+
+  <main style="max-width:880px; padding:3.5rem 1.5rem; margin:auto;">
+
+    <h2>Palette de Boutons</h2>
+    <button class="btn btn-primary">.btn-primary</button>
+    <button class="btn btn-secondary">.btn-secondary</button>
+    <button class="btn btn-danger">.btn-danger</button>
+    <button class="btn btn-primary" disabled>.btn-primary (disabled)</button>
+
+    <h2>Inputs & formulaires</h2>
+    <label class="label">Texte <input class="input" placeholder="Votre texte ici..."></label>
+    <label class="label">Texte (erreur)
+      <input class="input error" placeholder="Erreur ici">
+    </label>
+    <label class="label">Textarea
+      <textarea class="input" rows="3">Contenu exemple</textarea>
+    </label>
+    <label class="label">Sélection
+      <select class="input"><option>Option 1</option><option>Option 2</option></select>
+    </label>
+
+    <h2>Example de Card</h2>
+    <div class="card">
+      <div class="card-header">Card de présentation UI</div>
+      <div>Utilisez .card pour afficher vos contenus, tableaux, infos utilisateur, etc. <br>
+      Cette card adapte automatiquement le design système et la palette AutomationAI3to5.</div>
+      <div class="card-footer"><button class="btn btn-primary btn-small">Découvrir</button></div>
+    </div>
+  </main>
+</body>
+</html>
 
