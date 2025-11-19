@@ -1,0 +1,20 @@
+{
+  "name": "automationai3to5-ui",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Design System UI/UX pour AutomationAI3to5",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "react:dev": "cd react-ui && npm run dev",
+    "start": "npm run dev"
+  },
+  "keywords": [],
+  "author": "AutomationAI3to5",
+  "license": "ISC",
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.1.1",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5"
+  }
+}
