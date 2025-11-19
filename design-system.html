@@ -137,7 +137,64 @@
         </tbody>
       </table>
 
-      <!-- 8. Typo & tokens -->
+      <!-- 8. Table tri/filtre JS vanilla -->
+      <h2>Table tri/filtre</h2>
+      <input id="searchInput" placeholder="Filtrer..." style="margin-bottom:1em;padding:.4em 1em;border-radius:7px;border:1.5px solid var(--secondary)">
+      <table class="datatable" id="sortableTable" aria-label="Tableau triable JS">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Prénom &#9650;</th>
+            <th onclick="sortTable(1)">Status</th>
+            <th onclick="sortTable(2)">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Emma</td><td>Actif</td><td>2025-10-18</td></tr>
+          <tr><td>Leo</td><td>En attente</td><td>2025-07-22</td></tr>
+          <tr><td>Noah</td><td>Inactif</td><td>2025-08-19</td></tr>
+          <tr><td>Anna</td><td>Actif</td><td>2025-01-03</td></tr>
+        </tbody>
+      </table>
+      <div style="color:var(--text-secondary);font-size:.94em;">
+        <b>Instructions :</b> Clique sur le header de colonne pour trier. Tape dans le champ pour filtrer dynamiquement les lignes.
+      </div>
+      <script>
+      let sortDir = true;
+      function sortTable(n) {
+        const table = document.getElementById("sortableTable");
+        let switching = true, rows, i, x, y, shouldSwitch;
+        sortDir = !sortDir;
+        while (switching) {
+          switching = false;
+          rows = table.rows;
+          for (i = 1; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            if ((sortDir && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) ||
+                (!sortDir && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase())) {
+              shouldSwitch = true; break;
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+          }
+        }
+      }
+      document.getElementById("searchInput").addEventListener("keyup", function() {
+        const filter = this.value.toLowerCase();
+        const table = document.getElementById("sortableTable");
+        Array.from(table.rows).forEach((row, idx) => {
+          if(idx===0) return; // continue for header
+          row.style.display = Array.from(row.cells).some(cell => 
+            cell.textContent.toLowerCase().includes(filter)
+          ) ? "" : "none";
+        });
+      });
+      </script>
+
+      <!-- 9. Typo & tokens -->
       <h2>Typographie & Tokens</h2>
       <h1>Titre H1 – Font 2.1rem</h1>
       <h2>Titre H2 – Font 1.6rem</h2>
@@ -146,21 +203,48 @@
       <p style="color:var(--text-secondary);">Sous-titre, note ou aide (text-secondary).</p>
       <div style="margin: 1em 0;"><span style="background: var(--cyan); color: var(--darker); padding: .4em 1em; border-radius: 6px;">Token color: cyan (#06b6d4)</span></div>
 
-      <!-- 9. Badges/tags -->
+      <!-- 10. Badges/tags -->
       <h2>Badges & Tags</h2>
       <span class="badge badge-success" tabindex="0">Succès</span>
       <span class="badge badge-danger" tabindex="0">Erreur</span>
       <span class="badge badge-warning" tabindex="0">Avertissement</span>
       <span class="badge badge-info" tabindex="0">Info</span>
 
-      <!-- 10. Progression/Loader -->
+      <!-- 11. Bloc Icônes – sandbox HTML + intégration React -->
+      <h2>Icônes SaaS AutomationAI3to5</h2>
+      <div style="display:flex; gap:2.2em; flex-wrap: wrap; align-items: center;">
+      <svg width="32" height="32" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin:.4em;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M9 22V12h6v10" /></svg><span>home</span>
+      <svg width="32" height="32" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin:.4em;"><path d="M3 12h18 M3 6h18 M3 18h18"/></svg><span>menu</span>
+      <svg width="32" height="32" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin:.4em;"><path d="M18 6L6 18 M6 6l12 12"/></svg><span>close</span>
+      <svg width="32" height="32" stroke="var(--primary)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin:.4em;"><path d="M11 11m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0 M21 21l-4.35-4.35"/></svg><span>search</span>
+ 
+        <!-- Répète pour chaque icône majeure, adapte la couleur si besoin -->
+      </div>
+      <div style="color:var(--text-secondary);font-size:.95em;margin:1em 0 2em;">
+      <b>Utilisation:</b> Copie/colle le SVG prêt ci-dessus dans tout composant HTML statique (ou génère via React/Icon.jsx dans ton sandbox React).
+      </div>
+
+      <!-- 12. Intégration React -->
+      <h2>Démo interactive – Icônes React (iframe)</h2>
+      <iframe 
+      src="http://localhost:5173/" 
+      style="width:100%;min-height:600px;border-radius:12px;border:2px solid var(--secondary);box-shadow:0 6px 16px 0 rgba(99,102,241,.09);margin-bottom:2em"
+      title="Icônes React Demo"
+      loading="lazy">
+      </iframe>
+      <div style="color:var(--text-secondary);font-size:.94em;">
+        <b>Remarque :</b> L’iframe pointe sur <code>localhost:5173</code> (Vite par défaut). Change si tu déploies ton kit React ailleurs.<br>
+        Le composant source utilisé est <code>src/components/IconShowcase.jsx</code> dans ton projet React.
+      </div>
+
+      <!-- 13. Progression/Loader -->
       <h2>Progression, Loader</h2>
       <div aria-label="Barre de progression" style="width:220px; background:var(--darker);border-radius:10px; margin-bottom:.5em">
         <div style="height:14px;width:58%;background:var(--primary);border-radius:9px;transition: width .3s;"></div>
       </div>
       <div class="loader" role="status" aria-label="Chargement en cours"></div>
 
-      <!-- 11. Accordéon (avec tabindex, aria) -->
+      <!-- 14. Accordéon (avec tabindex, aria) -->
       <h2>Accordéon</h2>
       <div class="accordion" tabindex="0" aria-label="Section FAQ">
         <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false" aria-controls="panel-1" id="accordion-1">
@@ -170,6 +254,44 @@
           <div class="card">Texte de la réponse/explication ici.</div>
         </div>
       </div>
+
+      <!-- 15. Bloc documentation “Exemples Tailwind/React” -->
+      <h2>Exemple usage Tailwind (snippet)</h2>
+      <pre style="background:#111827;color:#fafafa;padding:1em;border-radius:6px;overflow-x:auto">
+      <span>// Bouton simple Tailwind</span>
+      &lt;button class="px-4 py-2 rounded-lg bg-indigo-600 text-white font-bold hover:bg-indigo-800 transition"&gt;
+        Valider
+      &lt;/button&gt;
+      
+      <span>// Card Tailwind</span>
+      &lt;div class="bg-white rounded-xl shadow p-6 max-w-md"&gt;
+        &lt;h2 class="text-xl font-bold mb-4"&gt;Titre&lt;/h2&gt;
+        &lt;p class="mb-3 text-gray-600"&gt;Paragraphe ou contenu ici&lt;/p&gt;
+        &lt;button class="bg-indigo-500 text-white rounded px-4 py-2"&gt;Call-to-action&lt;/button&gt;
+      &lt;/div&gt;
+      </pre>
+      
+      <h2>Exemple usage React</h2>
+      <pre style="background:#1a2036;color:#e0e0e0;padding:1em;border-radius:7px;overflow-x:auto">
+      <span>// Utilisation du composant Icône (src/react-ui/components/Icon.jsx)</span>
+      {`<Icon name="menu" size={32} color="#6366f1" />`}
+      
+      <span>// Exemple de composant carte avec props</span>
+      {`
+      function Card({ title, children }) {
+        return (
+          <div className="card">
+            <div className="card-header">{title}</div>
+            <div>{children}</div>
+          </div>
+        );
+      }
+      // Usage
+      <Card title="Tâche importante">
+        <p>Livrable prévu le 15 décembre.</p>
+      </Card>
+      `}
+      </pre>
 
       <!-- Documentation inline -->
       <div style="color:var(--text-secondary);font-size:.95em;margin:1em 0 2em;">
