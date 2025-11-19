@@ -162,6 +162,26 @@
 </div>
 <div class="loader"></div>
 
+      <h2>Accordéon</h2>
+<div class="accordion" tabindex="0" aria-label="Section FAQ">
+  <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+    + Comment fonctionne ce composant ?
+  </button>
+  <div class="accordion-panel" style="display:none;">
+    <div class="card">Texte de la réponse/explication ici.</div>
+  </div>
+</div>
+<script>
+function toggleAccordion(btn){
+  const panel = btn.nextElementSibling;
+  const expanded = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', !expanded);
+  panel.style.display = expanded ? 'none' : 'block';
+  btn.focus();
+}
+</script>
+
+
 <!-- Documentation inline -->
 <div style="color:var(--text-secondary);font-size:.95em;margin:1em 0 2em;"><b>⚡ Datatable :</b> Style ta table avec “.datatable” (borders, padding, responsive). Utilise .badge pour indiquer statut.</div>
     </main>
