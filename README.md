@@ -22,14 +22,16 @@
 4. Faites évoluer, testez, publiez dans tous les SaaS sous ce style garanti.
 
 ## Brand palette
-| Name        | Color    | Usage              |
-|-------------|----------|--------------------|
-| Primary     | `#00ff88`| Accent, CTA        |
-| Secondary   | `#4f46e5`| Highlight, hover   |
-| Dark        | `#0a0e27`| Background, nav    |
-| Text        | `#ffffff`| Texte principal    |
-| Text 2nd    | `#a0adc8`| Sous-titres        |
-| Cyan        | `#00d9ff`| Hover, icons       |
-| Pink        | `#ff006e`| Alertes, Danger    |
-| Purple      | `#a78bfa`| Badges, Info       |
-
+| Name          | Color     | Usage             |
+|---------------|-----------|-------------------|
+| Primary       | `#6366f1` | Accent, CTA       |
+| Secondary     | `#8b5cf6` | Highlight, hover  |
+| Dark          | `#0f172a` | Background, nav   |
+| Darker        | `#020617` | Background - plus sombre  |
+| Text          | `#f8fafc` | Texte principal   |
+| Text Secondary| `#94a3b8` | Sous-titres       |
+| Cyan          | `#06b6d4` | Hover, icons      |
+| Pink          | `#d946ef` | Alertes, Danger   |
+| Purple        | `#a78bfa` | Badges, Info      |
+| Accent Gold   | `#fbbf24` | Accent Or         |
+| Accent Silver | `#cbd5e1` | Accent Argent     |
