@@ -1,1 +1,19 @@
+.modal-bg {
+  position: fixed; z-index: 9999;
+  top:0; left:0; width:100vw; height:100vh;
+  background: rgba(15,23,42,0.62);
+  display: none; justify-content: center; align-items: center;
+}
+.modal {
+  background: var(--darker);
+  color: var(--text);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.23);
+  padding: 2.5rem 1.7rem 1.8rem 1.7rem;
+  min-width: 320px; max-width:95vw;
+  border: 1.8px solid var(--primary);
+  display: none;
+}
+.modal-header { font-size:1.22rem; font-weight:700; margin-bottom:1.2rem;}
+.modal-actions { margin-top:2.1rem; display:flex; gap:1.5rem; }
 
