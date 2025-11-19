@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>TableSortable – AutomationAI3to5 UI</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <style>
+    body { background: var(--dark); color: var(--text); padding:2rem; font-family: var(--font-main);}
+    input { margin-bottom:1.1em; background:var(--darker); color:var(--text); border:1.5px solid var(--primary); border-radius:7px; padding:.4em 1em;}
+    th { cursor:pointer; transition:background .18s;}
+    th.sorted { background:var(--primary); color:var(--dark);}
+  </style>
+</head>
+<body>
+  <h1>Table triable / filtrable</h1>
+  <input id="searchInput" placeholder="Filtrer..." aria-label="Filtrer les lignes"/>
+  <table class="datatable" id="sortableTable" aria-label="Table utilisateur triable">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Prénom &#9650;</th>
+        <th onclick="sortTable(1)">Statut</th>
+        <th onclick="sortTable(2)">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Emma</td><td><span class="badge badge-success">Actif</span></td><td>2025-10-18</td></tr>
+      <tr><td>Leo</td><td><span class="badge badge-warning">En attente</span></td><td>2025-07-22</td></tr>
+      <tr><td>Noah</td><td><span class="badge badge-danger">Inactif</span></td><td>2025-08-19</td></tr>
+      <tr><td>Anna</td><td><span class="badge badge-success">Actif</span></td><td>2025-01-03</td></tr>
+      <tr><td>Mia</td><td><span class="badge badge-warning">En attente</span></td><td>2025-03-05</td></tr>
+    </tbody>
+  </table>
+  <div style="color:var(--text-secondary);font-size:.97em;margin:1.1em 0 2em;">
+    Clique sur un en-tête de colonne pour trier (asc/desc). Tape dans le champ pour filtrer dynamiquement les lignes. Style badge, tri, focus, tout conforme à ton DS.
+  </div>
+<script>
+let sortDir = [true, true, true]; // un sens par colonne
+function sortTable(n) {
+  const table = document.getElementById("sortableTable");
+  const ths = table.getElementsByTagName("th");
+  
+  // Reset styles
+  for(let th of ths) { th.classList.remove('sorted'); }
+
+  let switching = true, rows, i, x, y, shouldSwitch;
+  sortDir[n] = !sortDir[n];  // Inverse à chaque clic
+
+  ths[n].classList.add('sorted'); // Highlight sorted col
+  
+  while (switching) {
+    switching = false;
+    rows = table.tBodies[0].rows;
+    for (i = 0; i < rows.length - 1; i++) {
+      shouldSwitch = false;
+      x = rows[i].cells[n].innerText.toLowerCase();
+      y = rows[i + 1].cells[n].innerText.toLowerCase();
+      if (
+        (sortDir[n] && x > y) ||
+        (!sortDir[n] && x < y)
+      ) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+document.getElementById("searchInput").addEventListener("keyup", function() {
+  const filter = this.value.toLowerCase();
+  const table = document.getElementById("sortableTable");
+  Array.from(table.tBodies[0].rows).forEach((row) => {
+    row.style.display = Array.from(row.cells).some(cell =>
+      cell.textContent.toLowerCase().includes(filter)
+    ) ? "" : "none";
+  });
+});
+</script>
+</body>
+</html>
