@@ -102,6 +102,46 @@
       <div id="tabContent1"><div class="card">Contenu de l’onglet 1</div></div>
       <div id="tabContent2" style="display:none"><div class="card">Onglet 2 : card bis</div></div>
       <div id="tabContent3" style="display:none"><div class="card">Troisième contenu</div></div>
+
+      <h2>Datatable (Exemple Tableau)</h2>
+<table class="datatable">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Status</th>
+      <th>Date</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alice</td>
+      <td><span class="badge badge-success">Actif</span></td>
+      <td>2025-11-19</td>
+      <td>
+        <button class="btn btn-secondary btn-small">Éditer</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Bob</td>
+      <td><span class="badge badge-warning">En attente</span></td>
+      <td>2025-10-22</td>
+      <td>
+        <button class="btn btn-secondary btn-small">Éditer</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Clara</td>
+      <td><span class="badge badge-danger">Inactif</span></td>
+      <td>2025-09-15</td>
+      <td>
+        <button class="btn btn-secondary btn-small">Éditer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- Documentation inline -->
+<div style="color:var(--text-secondary);font-size:.95em;margin:1em 0 2em;"><b>⚡ Datatable :</b> Style ta table avec “.datatable” (borders, padding, responsive). Utilise .badge pour indiquer statut.</div>
     </main>
   </div>
 
