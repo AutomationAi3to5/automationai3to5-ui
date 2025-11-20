@@ -228,11 +228,24 @@
       <h2>Démo interactive – Icônes React</h2>
       <div class="card" style="padding:1.5rem; border:1.5px solid var(--secondary); border-radius:12px; box-shadow:0 6px 16px rgba(99,102,241,.09); margin-bottom:2em;">
         <p style="margin-bottom:1.2rem;">L'aperçu React interactif est servi par Vite sur le port 5173. Ouvre-le dans un nouvel onglet pour profiter du hot-reload.</p>
-        <a class="btn btn-primary" href="http://localhost:5173" target="_blank" rel="noopener noreferrer">Ouvrir l'application React</a>
+        <a class="btn btn-primary" href="https://29141aae-2c5b-46da-aa46-ff174d837646-00-o0xvtquez6vt-5173.riker.replit.dev" target="_blank" rel="noopener noreferrer" id="reactAppLink">Ouvrir l'application React</a>
         <p style="color:var(--text-secondary); font-size:.94em; margin-top:1.2rem;">
           Le composant source utilisé est <code>src/components/IconShowcase.jsx</code> dans le dossier <code>react-ui</code>.
         </p>
       </div>
+      <script>
+        // Dynamically set the React app URL based on current domain
+        (function() {
+          const link = document.getElementById('reactAppLink');
+          if (link && window.location.hostname !== 'localhost') {
+            const currentUrl = new URL(window.location.href);
+            const baseHost = currentUrl.hostname;
+            // Replace port in Replit URL pattern
+            const reactUrl = baseHost.replace(/-(\d+)\./, '-5173.');
+            link.href = currentUrl.protocol + '//' + reactUrl;
+          }
+        })();
+      </script>
 
       <!-- 13. Progression/Loader -->
       <h2>Progression, Loader</h2>
