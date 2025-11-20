@@ -16,27 +16,46 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
 if (isDev) {
-  // Development: Proxy all requests starting with /react-ui to Vite dev server
-  app.use('/react-ui', createProxyMiddleware({
+  // Create proxy middleware instance once (not per request)
+  const viteProxy = createProxyMiddleware({
     target: 'http://localhost:5173',
     changeOrigin: true,
     pathRewrite: {
-      '^/react-ui': ''  // Remove /react-ui prefix before forwarding to Vite
+      '^/react-ui': ''
     },
     ws: true,
     logLevel: 'silent',
     onProxyReq: (proxyReq, req, res) => {
       proxyReq.setHeader('Accept-Encoding', 'identity');
-    },
-    onProxyRes: (proxyRes, req, res) => {
-      // Rewrite location headers if any
-      if (proxyRes.headers['location']) {
-        proxyRes.headers['location'] = proxyRes.headers['location'].replace(/^\//, '/react-ui/');
-      }
+      proxyReq.setHeader('host', 'localhost:5173');
     }
-  }));
+  });
+  
+  // Custom middleware to inject base tag for HTML, then proxy to Vite
+  app.use('/react-ui', async (req, res, next) => {
+    // Only intercept HTML requests (root path)
+    if (req.path === '/' || req.path === '/index.html') {
+      try {
+        const response = await fetch('http://localhost:5173/');
+        let html = await response.text();
+        
+        // Inject base tag after <head>
+        html = html.replace('<head>', '<head>\n    <base href="/react-ui/">');
+        
+        res.setHeader('Content-Type', 'text/html');
+        res.setHeader('Cache-Control', 'no-cache');
+        res.send(html);
+      } catch (error) {
+        console.error('Error fetching HTML from Vite:', error);
+        res.status(500).send('Error loading React app');
+      }
+    } else {
+      // Proxy all other requests to Vite using the shared instance
+      viteProxy(req, res, next);
+    }
+  });
 } else {
-  // Production: Serve built React app
+  // Production: Serve built React app from dist
   const reactDistPath = path.join(__dirname, 'react-ui', 'dist');
   if (existsSync(reactDistPath)) {
     app.use('/react-ui', express.static(reactDistPath));

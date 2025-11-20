@@ -35,3 +35,55 @@
 | Purple        | `#a78bfa` | Badges, Info      |
 | Accent Gold   | `#fbbf24` | Accent Or         |
 | Accent Silver | `#cbd5e1` | Accent Argent     |
+
+## Application React - Kit d'Icônes Interactif
+
+Le projet inclut une bibliothèque d'icônes React avec plus de 100 icônes personnalisables.
+
+### Accès sur Replit
+
+L'application React est accessible de deux façons :
+
+1. **Via le Design System** (recommandé)
+   - Ouvrez `/` dans la prévisualisation
+   - Scrollez jusqu'à "Démo interactive – Icônes React"
+   - Cliquez sur "Ouvrir l'application React"
+
+2. **URL directe** : `/react-ui/`
+
+### Fonctionnalités
+
+- 🔍 Recherche instantanée parmi toutes les icônes
+- 🎨 Personnalisation : taille, épaisseur et couleur
+- 📋 Copie du code React en un clic
+- 📱 Interface responsive avec Tailwind CSS
+
+### Architecture technique (Replit)
+
+Le projet utilise :
+- **Express (port 5000)** : Serveur principal avec proxy inverse vers React
+- **Vite (port 5173)** : Serveur de développement React (interne)
+
+Le proxy injecte automatiquement une balise `<base href="/react-ui/">` pour la résolution correcte des assets React à travers le proxy.
+
+### Développement local
+
+```bash
+# Démarrer les deux serveurs
+bash start.sh
+
+# Ou séparément
+node server.js
+cd react-ui && npm run dev
+```
+
+### Production
+
+Pour le déploiement, buildez l'application React :
+
+```bash
+cd react-ui
+npm run build
+```
+
+Le serveur Express servira automatiquement le build statique en mode production.
