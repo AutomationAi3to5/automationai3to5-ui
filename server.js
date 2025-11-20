@@ -16,43 +16,20 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
 if (isDev) {
-  // Create proxy middleware instance once (not per request)
+  // Proxy configuration that preserves the /react-ui path
   const viteProxy = createProxyMiddleware({
     target: 'http://localhost:5173',
     changeOrigin: true,
-    pathRewrite: {
-      '^/react-ui': ''
-    },
     ws: true,
-    logLevel: 'silent',
-    onProxyReq: (proxyReq, req, res) => {
-      proxyReq.setHeader('Accept-Encoding', 'identity');
-      proxyReq.setHeader('host', 'localhost:5173');
-    }
+    logLevel: 'silent'
   });
   
-  // Custom middleware to inject base tag for HTML, then proxy to Vite
-  app.use('/react-ui', async (req, res, next) => {
-    // Only intercept HTML requests (root path)
-    if (req.path === '/' || req.path === '/index.html') {
-      try {
-        const response = await fetch('http://localhost:5173/');
-        let html = await response.text();
-        
-        // Inject base tag after <head>
-        html = html.replace('<head>', '<head>\n    <base href="/react-ui/">');
-        
-        res.setHeader('Content-Type', 'text/html');
-        res.setHeader('Cache-Control', 'no-cache');
-        res.send(html);
-      } catch (error) {
-        console.error('Error fetching HTML from Vite:', error);
-        res.status(500).send('Error loading React app');
-      }
-    } else {
-      // Proxy all other requests to Vite using the shared instance
-      viteProxy(req, res, next);
+  // Use app.use with filter function to preserve path
+  app.use((req, res, next) => {
+    if (req.path.startsWith('/react-ui')) {
+      return viteProxy(req, res, next);
     }
+    next();
   });
 } else {
   // Production: Serve built React app from dist
