@@ -225,17 +225,13 @@
       </div>
 
       <!-- 12. Intégration React -->
-      <h2>Démo interactive – Icônes React (iframe)</h2>
-      <iframe 
-        src="https://29141aae-2c5b-46da-aa46-ff174d837646-00-o0xvtquez6vt.riker.replit.dev/" 
-        style="width:100%;min-height:600px;border-radius:12px;border:2px solid var(--secondary);box-shadow:0 6px 16px 0 rgba(99,102,241,.09);margin-bottom:2em"
-        title="Icônes React Demo"
-        loading="lazy">
-      </iframe>
-
-      <div style="color:var(--text-secondary);font-size:.94em;">
-        <b>Remarque :</b> L’iframe pointe sur <code>localhost:5173</code> (Vite par défaut). Change si tu déploies ton kit React ailleurs.<br>
-        Le composant source utilisé est <code>src/components/IconShowcase.jsx</code> dans ton projet React.
+      <h2>Démo interactive – Icônes React</h2>
+      <div class="card" style="padding:1.5rem; border:1.5px solid var(--secondary); border-radius:12px; box-shadow:0 6px 16px rgba(99,102,241,.09); margin-bottom:2em;">
+        <p style="margin-bottom:1.2rem;">L'aperçu React interactif est servi par Vite sur le port 5173. Ouvre-le dans un nouvel onglet pour profiter du hot-reload.</p>
+        <a class="btn btn-primary" href="http://localhost:5173" target="_blank" rel="noopener noreferrer">Ouvrir l'application React</a>
+        <p style="color:var(--text-secondary); font-size:.94em; margin-top:1.2rem;">
+          Le composant source utilisé est <code>src/components/IconShowcase.jsx</code> dans le dossier <code>react-ui</code>.
+        </p>
       </div>
 
       <!-- 13. Progression/Loader -->
