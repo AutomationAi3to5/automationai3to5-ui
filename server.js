@@ -16,36 +16,25 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
 
 if (isDev) {
-  // Development: Redirect to Vite dev server
-  app.get('/react-ui', (req, res) => {
-    res.send(`
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirection vers React App</title>
-  <style>
-    body { font-family: system-ui, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #f3f4f6; margin: 0; }
-    .container { text-align: center; background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); max-width: 500px; }
-    h1 { color: #1f2937; margin-bottom: 1rem; }
-    p { color: #6b7280; margin-bottom: 1.5rem; }
-    a { display: inline-block; background: #6366f1; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; }
-    a:hover { background: #4f46e5; }
-    .note { font-size: 0.875rem; color: #9ca3af; margin-top: 1rem; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>🚀 Application React - Icônes</h1>
-    <p>L'application React est servie directement par Vite sur le port 5173</p>
-    <a href="http://localhost:5173" target="_blank">Ouvrir l'application React</a>
-    <p class="note">Note: En production, l'application sera servie via ce même chemin après le build</p>
-  </div>
-</body>
-</html>
-    `);
-  });
+  // Development: Proxy all requests starting with /react-ui to Vite dev server
+  app.use('/react-ui', createProxyMiddleware({
+    target: 'http://localhost:5173',
+    changeOrigin: true,
+    pathRewrite: {
+      '^/react-ui': ''  // Remove /react-ui prefix before forwarding to Vite
+    },
+    ws: true,
+    logLevel: 'silent',
+    onProxyReq: (proxyReq, req, res) => {
+      proxyReq.setHeader('Accept-Encoding', 'identity');
+    },
+    onProxyRes: (proxyRes, req, res) => {
+      // Rewrite location headers if any
+      if (proxyRes.headers['location']) {
+        proxyRes.headers['location'] = proxyRes.headers['location'].replace(/^\//, '/react-ui/');
+      }
+    }
+  }));
 } else {
   // Production: Serve built React app
   const reactDistPath = path.join(__dirname, 'react-ui', 'dist');
