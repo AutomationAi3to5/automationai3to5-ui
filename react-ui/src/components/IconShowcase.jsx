@@ -1,9 +1,121 @@
 import React, { useState } from 'react';
 
-// Composant Icon flexible (chemins SVG fournis précédemment)
+// Composant Icon flexible
 const Icon = ({ name, size = 24, color = 'currentColor', strokeWidth = 2, className = '', ...props }) => {
   const icons = {
-    // ... (toutes les icônes fournies précédemment) ...
+    // Navigation & Interface
+    home: 'M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M9 22V12h6v10',
+    menu: 'M3 12h18 M3 6h18 M3 18h18',
+    close: 'M18 6L6 18 M6 6l12 12',
+    search: 'M11 11m-8 0a8 8 0 1 0 16 0a8 8 0 1 0 -16 0 M21 21l-4.35-4.35',
+    settings: 'M12 15a3 3 0 100-6 3 3 0 000 6z M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z',
+    filter: 'M22 3H2l8 9.46V19l4 2v-8.54L22 3z',
+    grid: 'M3 3h7v7H3z M14 3h7v7h-7z M14 14h7v7h-7z M3 14h7v7H3z',
+    list: 'M8 6h13 M8 12h13 M8 18h13 M3 6h.01 M3 12h.01 M3 18h.01',
+
+    // Flèches & Navigation
+    arrowLeft: 'M19 12H5 M12 19l-7-7 7-7',
+    arrowRight: 'M5 12h14 M12 5l7 7-7 7',
+    arrowUp: 'M12 19V5 M5 12l7-7 7 7',
+    arrowDown: 'M12 5v14 M19 12l-7 7-7-7',
+    chevronLeft: 'M15 18l-6-6 6-6',
+    chevronRight: 'M9 18l6-6-6-6',
+    chevronDown: 'M6 9l6 6 6-6',
+    chevronUp: 'M18 15l-6-6-6 6',
+
+    // Utilisateur & Profil
+    user: 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2 M12 11a4 4 0 100-8 4 4 0 000 8z',
+    users: 'M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2 M13 7a4 4 0 11-8 0 4 4 0 018 0z M23 21v-2a4 4 0 00-3-3.87 M16 3.13a4 4 0 010 7.75',
+    userPlus: 'M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2 M12.5 7a4 4 0 11-8 0 4 4 0 018 0z M20 8v6 M23 11h-6',
+    userCheck: 'M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2 M12.5 7a4 4 0 11-8 0 4 4 0 018 0z M17 11l2 2 4-4',
+
+    // IA & Automatisation
+    cpu: 'M4 4h16v16H4z M9 9h6v6H9z M9 1v3 M15 1v3 M9 20v3 M15 20v3 M20 9h3 M20 14h3 M1 9h3 M1 14h3',
+    zap: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
+    activity: 'M22 12h-4l-3 9L9 3l-3 9H2',
+    brain: 'M12 5a3 3 0 103 3 4 4 0 014 4v1a2 2 0 104 0v-1a8 8 0 10-16 0v5a2 2 0 01-2 2 M12 5V3',
+    robot: 'M12 2v2 M6 8a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H8a2 2 0 01-2-2V8z M8 11h2 M14 11h2 M9 16h6',
+    workflow: 'M21 16V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2h14a2 2 0 002-2z M12 12m-2 0a2 2 0 104 0 2 2 0 10-4 0 M7 12h1 M16 12h1',
+
+    // Fichiers & Documents
+    file: 'M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9z M13 2v7h7',
+    fileText: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z M14 2v6h6 M16 13H8 M16 17H8 M10 9H8',
+    folder: 'M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z',
+    folderOpen: 'M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2v11z M2 13l2.89-2.89a2 2 0 012.83 0L13 15l3.75-3.75a2 2 0 012.83 0L22 14',
+    download: 'M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4 M7 10l5 5 5-5 M12 15V3',
+    upload: 'M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4 M17 8l-5-5-5 5 M12 3v12',
+
+    // Actions
+    plus: 'M12 5v14 M5 12h14',
+    minus: 'M5 12h14',
+    edit: 'M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7 M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z',
+    trash: 'M3 6h18 M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2 M10 11v6 M14 11v6',
+    copy: 'M20 9h-9a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-9a2 2 0 00-2-2z M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1',
+    check: 'M20 6L9 17l-5-5',
+    checkCircle: 'M22 11.08V12a10 10 0 11-5.93-9.14 M22 4L12 14.01l-3-3',
+    save: 'M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z M17 21v-8H7v8 M7 3v5h8',
+
+    // Communication
+    mail: 'M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z M22 6l-10 7L2 6',
+    messageSquare: 'M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z',
+    bell: 'M18 8A6 6 0 106 8c0 7-3 9-3 9h18s-3-2-3-9 M13.73 21a2 2 0 01-3.46 0',
+    phone: 'M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z',
+
+    // Statut & Feedback
+    alertCircle: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 8v4 M12 16h.01',
+    info: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 16v-4 M12 8h.01',
+    helpCircle: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3 M12 17h.01',
+    xCircle: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M15 9l-6 6 M9 9l6 6',
+
+    // Sécurité & Authentification
+    lock: 'M19 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2z M7 11V7a5 5 0 0110 0v4',
+    unlock: 'M19 11H5a2 2 0 00-2 2v7a2 2 0 002 2h14a2 2 0 002-2v-7a2 2 0 00-2-2z M7 11V7a5 5 0 019.9-1',
+    key: 'M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4',
+    shield: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z',
+
+    // Temps & Calendrier
+    clock: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 6v6l4 2',
+    calendar: 'M19 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2z M16 2v4 M8 2v4 M3 10h18',
+
+    // Médias & Affichage
+    eye: 'M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z M12 15a3 3 0 100-6 3 3 0 000 6z',
+    eyeOff: 'M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24 M1 1l22 22',
+    image: 'M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z M8.5 10a1.5 1.5 0 100-3 1.5 1.5 0 000 3z M21 15l-5-5L5 21',
+    play: 'M5 3l14 9-14 9V3z',
+    pause: 'M6 4h4v16H6zm8 0h4v16h-4z',
+
+    // Business & Analytics
+    barChart: 'M12 20V10 M18 20V4 M6 20v-4',
+    trendingUp: 'M23 6l-9.5 9.5-5-5L1 18 M17 6h6v6',
+    trendingDown: 'M23 18l-9.5-9.5-5 5L1 6 M17 18h6v-6',
+    pieChart: 'M21.21 15.89A10 10 0 118 2.83 M22 12A10 10 0 0012 2v10z',
+    dollar: 'M12 1v22 M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 010 7H6',
+
+    // Système & Tech
+    server: 'M20 4H4a2 2 0 00-2 2v4a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2z M20 12H4a2 2 0 00-2 2v4a2 2 0 002 2h16a2 2 0 002-2v-4a2 2 0 00-2-2z M6 8h.01 M6 16h.01',
+    database: 'M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4z M2 12c0 2.21 4.48 4 10 4s10-1.79 10-4',
+    code: 'M16 18l6-6-6-6 M8 6l-6 6 6 6',
+    terminal: 'M4 17l6-6-6-6 M12 19h8',
+    package: 'M16.5 9.4l-9-5.19 M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z M3.27 6.96L12 12.01l8.73-5.05 M12 22.08V12',
+
+    // Connexion & Réseau
+    wifi: 'M5 12.55a11 11 0 0114.08 0 M1.42 9a16 16 0 0121.16 0 M8.53 16.11a6 6 0 016.95 0 M12 20h.01',
+    link: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71 M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71',
+    globe: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M2 12h20 M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z',
+
+    // E-commerce & Shopping
+    shoppingCart: 'M9 2L1 6v16l8 4 8-4 8 4V6l-8-4-8 4z M9 22V6',
+    creditCard: 'M21 4H3a2 2 0 00-2 2v12a2 2 0 002 2h18a2 2 0 002-2V6a2 2 0 00-2-2z M1 10h22',
+    tag: 'M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z M7 7h.01',
+
+    // Divers
+    star: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z',
+    heart: 'M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z',
+    bookmark: 'M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z',
+    layers: 'M12 2L2 7l10 5 10-5-10-5z M2 17l10 5 10-5 M2 12l10 5 10-5',
+    maximize: 'M15 3h6v6 M9 21H3v-6 M21 3l-7 7 M3 21l7-7',
+    minimize: 'M8 3v3a2 2 0 01-2 2H3 M21 8h-3a2 2 0 01-2-2V3 M3 16h3a2 2 0 012 2v3 M16 21v-3a2 2 0 012-2h3',
+    refresh: 'M23 4v6h-6 M1 20v-6h6 M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15',
   };
 
   const path = icons[name];
@@ -21,7 +133,6 @@ const Icon = ({ name, size = 24, color = 'currentColor', strokeWidth = 2, classN
       strokeLinejoin="round"
       className={className}
       {...props}
-      style={{ borderRadius: '6px' }} // coin arrondi
     >
       {path.split(' M').filter(Boolean).map((d, i) => (
         <path key={i} d={`M${d}`} />
@@ -30,7 +141,7 @@ const Icon = ({ name, size = 24, color = 'currentColor', strokeWidth = 2, classN
   );
 };
 
-// Composant de démonstration complet avec grille et filtres
+// Composant de démonstration
 const IconShowcase = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [size, setSize] = useState(24);
@@ -64,7 +175,7 @@ const IconShowcase = () => {
     : allIcons;
 
   const copyToClipboard = (iconName) => {
-    const code = `<Icon name="${iconName}" size={${size}} strokeWidth={${strokeWidth}} color="${color}" />`;
+    const code = `<Icon name="${iconName}" size={24} />`;
     navigator.clipboard.writeText(code);
     setCopiedIcon(iconName);
     setTimeout(() => setCopiedIcon(null), 2000);
@@ -73,10 +184,13 @@ const IconShowcase = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
       <div className="max-w-7xl mx-auto">
+        {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">Kit d'Icônes SaaS & IA</h1>
-          <p className="text-gray-600 text-lg">Plus de 100 icônes pour votre portail d'automatisation & SaaS</p>
+          <p className="text-gray-600 text-lg">Plus de 100 icônes pour votre portail d'automatisation</p>
         </div>
+
+        {/* Contrôles */}
         <div className="bg-white rounded-2xl shadow-lg p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="md:col-span-2">
@@ -92,10 +206,9 @@ const IconShowcase = () => {
                 />
               </div>
             </div>
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Taille: {size}px
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Taille: {size}px</label>
               <input
                 type="range"
                 min="16"
@@ -105,10 +218,9 @@ const IconShowcase = () => {
                 className="w-full"
               />
             </div>
+
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Épaisseur: {strokeWidth}
-              </label>
+              <label className="block text-sm font-medium text-gray-700 mb-2">Épaisseur: {strokeWidth}</label>
               <input
                 type="range"
                 min="1"
@@ -120,6 +232,7 @@ const IconShowcase = () => {
               />
             </div>
           </div>
+
           <div className="mt-4">
             <label className="block text-sm font-medium text-gray-700 mb-2">Couleur</label>
             <div className="flex gap-2">
@@ -131,35 +244,146 @@ const IconShowcase = () => {
                     color === c ? 'border-gray-900 scale-110' : 'border-gray-300'
                   }`}
                   style={{ backgroundColor: c }}
-                  aria-label={`Couleur ${c}`}
                 />
               ))}
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-8">
-          <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4">
-            {filteredIcons.map((iconName) => (
-              <button
-                key={iconName}
-                onClick={() => copyToClipboard(iconName)}
-                className="flex flex-col items-center p-2 hover:bg-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                title={`Copier le code de l'icône ${iconName}`}
-              >
-                <Icon name={iconName} size={size} strokeWidth={strokeWidth} color={color} />
-                <span className="text-xs mt-1 text-gray-700 truncate max-w-full">{iconName}</span>
-                {copiedIcon === iconName && (
-                  <span className="text-xs text-green-500 mt-1">Copié !</span>
-                )}
-              </button>
-            ))}
+        {/* Grille d'icônes */}
+        {searchTerm ? (
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4">
+              {filteredIcons.map((iconName) => (
+                <button
+                  key={iconName}
+                  onClick={() => copyToClipboard(iconName)}
+                  className="flex flex-col items-center justify-center p-4 rounded-lg hover:bg-gray-50 transition-all group relative"
+                  title={iconName}
+                >
+                  <Icon name={iconName} size={size} color={color} strokeWidth={strokeWidth} />
+                  <span className="text-xs text-gray-500 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                    {iconName}
+                  </span>
+                  {copiedIcon === iconName && (
+                    <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded">
+                      Copié!
+                    </div>
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
+        ) : (
+          Object.entries(iconCategories).map(([category, icons]) => (
+            <div key={category} className="bg-white rounded-2xl shadow-lg p-8 mb-6">
+              <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                <div className="w-1 h-6 bg-blue-500 rounded"></div>
+                {category}
+              </h2>
+              <div className="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-4">
+                {icons.map((iconName) => (
+                  <button
+                    key={iconName}
+                    onClick={() => copyToClipboard(iconName)}
+                    className="flex flex-col items-center justify-center p-4 rounded-lg hover:bg-gray-50 transition-all group relative"
+                    title={iconName}
+                  >
+                    <Icon name={iconName} size={size} color={color} strokeWidth={strokeWidth} />
+                    <span className="text-xs text-gray-500 mt-2 opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                      {iconName}
+                    </span>
+                    {copiedIcon === iconName && (
+                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+                        Copié!
+                      </div>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))
+        )}
+
+        {/* Guide d'utilisation */}
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-lg p-8 mt-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Guide d'utilisation</h2>
+
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Import du composant</h3>
+              <pre className="bg-white p-4 rounded-lg text-sm overflow-x-auto border border-gray-200">
+{`import { Icon } from './components/Icon';`}
+              </pre>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Utilisation basique</h3>
+              <pre className="bg-white p-4 rounded-lg text-sm overflow-x-auto border border-gray-200">
+{`<Icon name="robot" size={24} />
+<Icon name="zap" size={32} color="#3b82f6" />
+<Icon name="brain" size={28} strokeWidth={2.5} />`}
+              </pre>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Props disponibles</h3>
+              <div className="bg-white p-4 rounded-lg border border-gray-200">
+                <ul className="space-y-2 text-sm">
+                  <li><code className="bg-gray-100 px-2 py-1 rounded">name</code> - Nom de l'icône (requis)</li>
+                  <li><code className="bg-gray-100 px-2 py-1 rounded">size</code> - Taille en pixels (défaut: 24)</li>
+                  <li><code className="bg-gray-100 px-2 py-1 rounded">color</code> - Couleur (défaut: currentColor)</li>
+                  <li><code className="bg-gray-100 px-2 py-1 rounded">strokeWidth</code> - Épaisseur des traits (défaut: 2)</li>
+                  <li><code className="bg-gray-100 px-2 py-1 rounded">className</code> - Classes CSS additionnelles</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Exemples avec Tailwind</h3>
+              <pre className="bg-white p-4 rounded-lg text-sm overflow-x-auto border border-gray-200">
+{`<Icon name="cpu" className="text-blue-600 hover:text-blue-800" />
+<Icon name="workflow" className="text-green-500" size={20} />
+<button className="flex items-center gap-2">
+  <Icon name="zap" size={18} />
+  Automatiser
+</button>`}
+              </pre>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">Export SVG individuels</h3>
+              <p className="text-sm text-gray-600 mb-3">Pour exporter des SVG individuels, vous pouvez extraire le composant Icon et créer des fichiers séparés :</p>
+              <pre className="bg-white p-4 rounded-lg text-sm overflow-x-auto border border-gray-200">
+{`// Robot.svg
+export const Robot = ({ size = 24, color = "currentColor" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" 
+       stroke={color} strokeWidth={2} strokeLinecap="round" 
+       strokeLinejoin="round">
+    <path d="M12 2v2" />
+    <path d="M6 8a2 2 0 012-2h8a2 2 0 012 2v12a2 2 0 01-2 2H8a2 2 0 01-2-2V8z" />
+    <path d="M8 11h2" />
+    <path d="M14 11h2" />
+    <path d="M9 16h6" />
+  </svg>
+);`}
+              </pre>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer */}
+        <div className="text-center mt-12 text-gray-600">
+          <p className="text-sm">
+            {allIcons.length} icônes • Style arrondi • 24x24px • Personnalisable
+          </p>
+          <p className="text-xs mt-2">
+            Cliquez sur une icône pour copier le code • Compatible React & SVG
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export { Icon, IconShowcase };
-
+export default IconShowcase;
