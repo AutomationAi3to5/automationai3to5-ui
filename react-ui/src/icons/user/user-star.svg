@@ -1,0 +1,6 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="12" fill="#fff9ee"/>
+  <circle cx="12" cy="10" r="4"/>
+  <path d="M6 20v-2a6 6 0 0112 0v2"/>
+  <polygon points="18,5 19,8 22,8 19.5,10 20,13 18,11 16,13 16.5,10 14,8 17,8"/>
+</svg>

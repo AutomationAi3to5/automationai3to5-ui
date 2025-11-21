@@ -1,0 +1,6 @@
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="12" cy="12" r="12" fill="#edfbee"/>
+  <circle cx="12" cy="10" r="4"/>
+  <path d="M6 20v-2a6 6 0 0112 0v2"/>
+  <polyline points="18 9 20 11 23 8"/>
+</svg>
