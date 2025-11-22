@@ -1,13 +1,14 @@
-/* Flexbox utilities */
+/* Flexbox - Flexbox utility classes */
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
 .flex-row { flex-direction: row; }
-.items-center { align-items: center; }
+.flex-wrap { flex-wrap: wrap; }
 .items-start { align-items: flex-start; }
+.items-center { align-items: center; }
 .items-end { align-items: flex-end; }
+.justify-start { justify-content: flex-start; }
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
-.justify-start { justify-content: flex-start; }
 .justify-end { justify-content: flex-end; }
 .gap-xs { gap: var(--space-xs); }
 .gap-sm { gap: var(--space-sm); }

@@ -1,14 +1,23 @@
-/* General utilities */
+/* Utilities - General purpose utility classes */
 .w-full { width: 100%; }
 .h-full { height: 100%; }
 .rounded { border-radius: var(--radius-md); }
-.rounded-full { border-radius: 9999px; }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-full { border-radius: var(--radius-full); }
 .border { border: 1px solid var(--border-color); }
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-right { text-align: right; }
-.hidden { display: none; }
+.hidden { display: none !important; }
 .visible { display: block; }
+.inline { display: inline; }
+.inline-block { display: inline-block; }
 .overflow-hidden { overflow: hidden; }
 .overflow-auto { overflow: auto; }
 .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+.opacity-50 { opacity: 0.5; }
+.opacity-75 { opacity: 0.75; }
+.no-underline { text-decoration: none; }

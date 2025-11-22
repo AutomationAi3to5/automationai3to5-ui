@@ -1,4 +1,16 @@
-/* Breakpoints - Media query breakpoints */
-@media (max-width: 640px) { .hidden-sm { display: none; } }
-@media (max-width: 768px) { .hidden-md { display: none; } }
-@media (min-width: 1024px) { .hidden-lg { display: none; } }
+/* Breakpoints - Responsive design breakpoint definitions */
+@media (max-width: 640px) {
+  .hidden-sm { display: none; }
+  .show-sm { display: block; }
+}
+@media (max-width: 768px) {
+  .hidden-md { display: none; }
+  .show-md { display: block; }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .hidden-sm { display: none; }
+}
+@media (min-width: 1024px) {
+  .hidden-lg { display: none; }
+  .show-lg { display: block; }
+}

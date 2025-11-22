@@ -1,3 +1,14 @@
-/* Header - Page header styles */
-header { background: var(--bg-primary); border-bottom: 1px solid var(--border-color); padding: var(--space-md) var(--space-lg); }
-header h1 { margin: 0; }
+/* Header - Page header/hero section styles */
+.header {
+  padding: var(--space-2xl) var(--space-lg);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+.header h1 {
+  margin: 0 0 var(--space-md) 0;
+  font-size: var(--font-size-3xl);
+}
+.header p {
+  margin: 0;
+  color: var(--text-secondary);
+}

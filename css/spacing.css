@@ -1,13 +1,17 @@
-/* Spacing utilities */
+/* Spacing - Margin and padding utilities */
 .p-xs { padding: var(--space-xs); }
 .p-sm { padding: var(--space-sm); }
 .p-md { padding: var(--space-md); }
 .p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
 .m-xs { margin: var(--space-xs); }
 .m-sm { margin: var(--space-sm); }
 .m-md { margin: var(--space-md); }
 .m-lg { margin: var(--space-lg); }
+.m-xl { margin: var(--space-xl); }
 .mt-md { margin-top: var(--space-md); }
 .mb-md { margin-bottom: var(--space-md); }
+.ml-md { margin-left: var(--space-md); }
+.mr-md { margin-right: var(--space-md); }
 .px-md { padding-left: var(--space-md); padding-right: var(--space-md); }
 .py-md { padding-top: var(--space-md); padding-bottom: var(--space-md); }

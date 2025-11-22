@@ -1,0 +1,27 @@
+/* Tooltips - Tooltip popup styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+.tooltip-content {
+  visibility: hidden;
+  background: var(--color-dark);
+  color: white;
+  text-align: center;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  position: absolute;
+  z-index: 100;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -50px;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+  width: max-content;
+}
+.tooltip:hover .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,7 +1,19 @@
-/* Print styles */
+/* Print - Print stylesheet for document printing */
 @media print {
-  body { background: white; color: black; }
-  a { text-decoration: underline; }
-  h1, h2, h3 { page-break-after: avoid; }
-  .no-print { display: none; }
+  body {
+    background: white;
+    color: black;
+  }
+  a {
+    text-decoration: underline;
+  }
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  table {
+    page-break-inside: avoid;
+  }
+  .no-print {
+    display: none;
+  }
 }

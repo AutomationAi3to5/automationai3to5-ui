@@ -1,9 +1,27 @@
-/* Interactive elements */
-button { transition: all var(--transition-base); }
-button:hover:not(:disabled) { transform: translateY(-2px); }
-button:active:not(:disabled) { transform: translateY(0); }
-button:disabled { cursor: not-allowed; opacity: 0.6; }
-a { transition: color var(--transition-base); }
-a:hover { text-decoration: underline; }
-input, textarea, select { transition: all var(--transition-base); }
-input:hover, textarea:hover, select:hover { border-color: var(--color-primary); }
+/* Interactions - Interactive element styles */
+button {
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+a {
+  transition: color var(--transition-base);
+}
+a:hover {
+  text-decoration: underline;
+}
+input, textarea, select {
+  transition: all var(--transition-base);
+}
+input:hover, textarea:hover, select:hover {
+  border-color: var(--color-primary);
+}

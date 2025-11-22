@@ -1,4 +1,4 @@
-/* Transitions and timing */
+/* Transitions - Transition and timing utilities */
 .transition-all { transition: all var(--transition-base); }
 .transition-colors { transition: background-color, border-color, color, fill, stroke; transition-duration: var(--transition-base); }
 .transition-fast { transition: all var(--transition-fast); }
