@@ -1,7 +1,0 @@
-export { default as checkbox } from './checkbox.svg?react'
-export { default as radio } from './radio.svg?react'
-export { default as toggle } from './toggle.svg?react'
-export { default as switch } from './switch.svg?react'
-export { default as input } from './input.svg?react'
-export { default as textarea } from './textarea.svg?react'
-export { default as select } from './select.svg?react'

@@ -1,6 +1,0 @@
-export { default as alert } from './alert.svg?react'
-export { default as success } from './success.svg?react'
-export { default as warning } from './warning.svg?react'
-export { default as error } from './error.svg?react'
-export { default as info } from './info.svg?react'
-export { default as help } from './help.svg?react'

@@ -1,5 +1,0 @@
-export { default as mail } from './mail.svg?react'
-export { default as message } from './message.svg?react'
-export { default as chat } from './chat.svg?react'
-export { default as send } from './send.svg?react'
-export { default as phone } from './phone.svg?react'

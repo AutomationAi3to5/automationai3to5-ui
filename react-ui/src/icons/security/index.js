@@ -1,5 +1,0 @@
-export { default as lock } from './lock.svg?react'
-export { default as unlock } from './unlock.svg?react'
-export { default as key } from './key.svg?react'
-export { default as shield } from './shield.svg?react'
-export { default as verified } from './verified.svg?react'
