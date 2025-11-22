@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Guidelines</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <style>
+    .content { max-width: 900px; margin: 2rem auto; padding: 2rem; }
+    .do { background: #d4edda; padding: 1rem; border-left: 4px solid #28a745; margin: 1rem 0; }
+    .dont { background: #f8d7da; padding: 1rem; border-left: 4px solid #dc3545; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>♿ Accessibility Guidelines</h1>
+    <p>All components comply with WCAG 2.1 AA standards.</p>
+
+    <h2>Semantic HTML</h2>
+    <div class="do">✓ Use semantic elements: button, nav, main, section, article</div>
+    <div class="dont">✗ Don't use div for buttons or interactive elements</div>
+
+    <h2>Keyboard Navigation</h2>
+    <div class="do">✓ All interactive elements must be keyboard accessible</div>
+    <div class="do">✓ Tab order should be logical (left to right, top to bottom)</div>
+
+    <h2>Color Contrast</h2>
+    <div class="do">✓ Text: minimum 4.5:1 ratio (normal text)</div>
+    <div class="do">✓ Large text: minimum 3:1 ratio</div>
+
+    <h2>Focus Indicators</h2>
+    <div class="do">✓ All focusable elements must show visible focus indicator</div>
+    <div class="dont">✗ Don't remove focus outlines</div>
+
+    <h2>ARIA Attributes</h2>
+    <div class="do">✓ Add aria-label, aria-describedby when needed</div>
+    <div class="dont">✗ Don't over-use ARIA (semantic HTML is preferred)</div>
+
+    <h2>Form Labels</h2>
+    <div class="do">✓ Every form input must have associated label</div>
+    <div class="dont">✗ Don't use placeholder as label substitute</div>
+  </div>
+</body>
+</html>

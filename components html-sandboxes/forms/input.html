@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Component</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <style>
+    .sandbox { padding: 2rem; }
+    .group { margin-bottom: 1.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+    input { width: 100%; max-width: 400px; padding: 0.75rem; border: 1px solid #ccc; border-radius: 4px; font-size: 1rem; }
+    input:focus { outline: 2px solid #0066cc; outline-offset: 2px; }
+  </style>
+</head>
+<body>
+  <div class="sandbox">
+    <h1>Input Component</h1>
+    <div class="group"><label>Text</label><input type="text" placeholder="Enter text"></div>
+    <div class="group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+    <div class="group"><label>Password</label><input type="password" placeholder="Enter password"></div>
+    <div class="group"><label>Number</label><input type="number" placeholder="Enter number" min="0" max="100"></div>
+  </div>
+</body>
+</html>

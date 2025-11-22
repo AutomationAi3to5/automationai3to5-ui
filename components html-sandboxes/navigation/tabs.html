@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs Component</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <style>
+    .sandbox { padding: 2rem; max-width: 800px; }
+    .tabs { display: flex; border-bottom: 2px solid #eee; margin-bottom: 1.5rem; }
+    .tab { padding: 1rem 1.5rem; background: none; border: none; cursor: pointer; }
+    .tab.active { color: #0066cc; border-bottom: 2px solid #0066cc; margin-bottom: -2px; }
+    .content { display: none; }
+    .content.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="sandbox">
+    <h1>Tabs Component</h1>
+    <div class="tabs">
+      <button class="tab active" onclick="show('tab1')">Tab 1</button>
+      <button class="tab" onclick="show('tab2')">Tab 2</button>
+      <button class="tab" onclick="show('tab3')">Tab 3</button>
+    </div>
+    <div id="tab1" class="content active"><h2>Tab 1</h2><p>Content here</p></div>
+    <div id="tab2" class="content"><h2>Tab 2</h2><p>Content here</p></div>
+    <div id="tab3" class="content"><h2>Tab 3</h2><p>Content here</p></div>
+  </div>
+  <script>
+    function show(id) {
+      document.querySelectorAll('.content').forEach(e => e.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

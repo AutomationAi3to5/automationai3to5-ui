@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breadcrumb Component</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <style>
+    .sandbox { padding: 2rem; }
+    .breadcrumb { display: flex; gap: 0.5rem; list-style: none; }
+    .breadcrumb li { display: flex; align-items: center; }
+    .breadcrumb li::after { content: "/"; margin: 0 0.5rem; color: #999; }
+    .breadcrumb li:last-child::after { content: ""; }
+    .breadcrumb a { color: #0066cc; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="sandbox">
+    <h1>Breadcrumb Component</h1>
+    <ol class="breadcrumb">
+      <li><a href="/">Home</a></li>
+      <li><a href="/components">Components</a></li>
+      <li><a href="/nav">Navigation</a></li>
+      <li>Breadcrumb</li>
+    </ol>
+  </div>
+</body>
+</html>

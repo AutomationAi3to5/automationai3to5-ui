@@ -1,0 +1,11 @@
+{
+  "name": "@automationai/design-system",
+  "version": "1.0.0",
+  "description": "Professional Design System UI Component Library",
+  "author": "AutomationAI Team",
+  "license": "MIT",
+  "keywords": ["design-system", "ui", "components", "html", "css"],
+  "repository": {"type": "git", "url": "https://github.com/automationai/design-system"},
+  "documentation": "./docs/",
+  "scripts": {"serve": "http-server ."}
+}

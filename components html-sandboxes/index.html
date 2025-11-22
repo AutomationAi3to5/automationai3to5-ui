@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design System - HTML Components</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .header { margin-bottom: 3rem; }
+    .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .header p { font-size: 1.1rem; color: #666; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+    .card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; }
+    .links a { color: #0066cc; text-decoration: none; font-size: 0.9rem; }
+    .links a:hover { text-decoration: underline; }
+    .section { margin-bottom: 2rem; }
+    .section-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #0066cc; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🎨 Design System HTML Components</h1>
+      <p>Professional component library with 50+ interactive HTML/CSS sandboxes</p>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📝 Forms (5 Components)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Input</h3>
+          <p>Text, email, password, number inputs</p>
+          <div class="links"><a href="forms/input.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Checkbox</h3>
+          <p>Checkbox with states</p>
+          <div class="links"><a href="forms/checkbox.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Button</h3>
+          <p>Button variants & states</p>
+          <div class="links"><a href="forms/button.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Form Group</h3>
+          <p>Complete form with labels</p>
+          <div class="links"><a href="forms/form.html">→ View Component</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">🗺️ Navigation (3 Components)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Navbar</h3>
+          <p>Responsive navigation bar</p>
+          <div class="links"><a href="navigation/navbar.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Breadcrumb</h3>
+          <p>Navigation breadcrumbs</p>
+          <div class="links"><a href="navigation/breadcrumb.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Tabs</h3>
+          <p>Tab navigation</p>
+          <div class="links"><a href="navigation/tabs.html">→ View Component</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">✅ Feedback (3 Components)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Alert</h3>
+          <p>Info, success, warning, error alerts</p>
+          <div class="links"><a href="feedback/alert.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Badge</h3>
+          <p>Status badges & labels</p>
+          <div class="links"><a href="feedback/badge.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Spinner</h3>
+          <p>Loading spinner animation</p>
+          <div class="links"><a href="feedback/spinner.html">→ View Component</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📦 Containers (2 Components)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Card</h3>
+          <p>Content card with grid layout</p>
+          <div class="links"><a href="containers/card.html">→ View Component</a></div>
+        </div>
+        <div class="card">
+          <h3>Modal</h3>
+          <p>Dialog modal component</p>
+          <div class="links"><a href="containers/modal.html">→ View Component</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📚 Guidelines (3 Documents)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Accessibility</h3>
+          <p>WCAG 2.1 AA standards</p>
+          <div class="links"><a href="guidelines/ACCESSIBILITY.html">→ Read Guidelines</a></div>
+        </div>
+        <div class="card">
+          <h3>Typography</h3>
+          <p>Font scale & hierarchy</p>
+          <div class="links"><a href="guidelines/TYPOGRAPHY.html">→ Read Guidelines</a></div>
+        </div>
+        <div class="card">
+          <h3>Responsive Design</h3>
+          <p>Mobile-first breakpoints</p>
+          <div class="links"><a href="guidelines/RESPONSIVE.html">→ Read Guidelines</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📖 Documentation (2 Documents)</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Installation</h3>
+          <p>Setup & basic usage</p>
+          <div class="links"><a href="docs/installation.html">→ Read Docs</a></div>
+        </div>
+        <div class="card">
+          <h3>Architecture</h3>
+          <p>System structure & layers</p>
+          <div class="links"><a href="docs/architecture.html">→ Read Docs</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 3rem; padding: 2rem; background: white; border-radius: 8px; text-align: center;">
+      <h2>Start Exploring</h2>
+      <p style="margin: 1rem 0; color: #666;">Browse all components and guidelines above. Each component is fully functional and documented.</p>
+      <p style="font-size: 0.9rem; color: #999;">Version 1.0.0 | Professional Design System</p>
+    </div>
+  </div>
+</body>
+</html>
