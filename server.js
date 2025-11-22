@@ -11,9 +11,12 @@ const app = express();
 const PORT = 5000;
 const isDev = process.env.NODE_ENV !== 'production';
 
-// Serve static files (CSS, images, HTML)
+// Serve static files (CSS, images, HTML, components, stories, playground)
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/img', express.static(path.join(__dirname, 'img')));
+app.use('/components', express.static(path.join(__dirname, 'components html-sandboxes')));
+app.use('/stories', express.static(path.join(__dirname, 'stories')));
+app.use('/playground', express.static(path.join(__dirname, 'playground')));
 
 if (isDev) {
   // Proxy configuration that preserves the /react-ui path

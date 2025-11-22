@@ -1,17 +1,32 @@
 {
-  "name": "automationai3to5-ui",
+  "name": "@automationai/design-system",
   "version": "1.0.0",
   "type": "module",
-  "description": "Design System UI/UX pour AutomationAI3to5",
+  "description": "Professional Design System - 470+ SVG icons, 50+ HTML components, React integration, comprehensive documentation",
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
     "react:dev": "cd react-ui && npm run dev",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "components": "echo 'Components available at http://localhost:5000/components'",
+    "stories": "echo 'Stories available at http://localhost:5000/stories'",
+    "playground": "echo 'Playground available at http://localhost:5000/playground'"
   },
-  "keywords": [],
-  "author": "AutomationAI3to5",
-  "license": "ISC",
+  "keywords": [
+    "design-system",
+    "ui-components",
+    "icon-library",
+    "react",
+    "html-css",
+    "accessible",
+    "wcag"
+  ],
+  "author": "AutomationAI Development Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/automationai/design-system"
+  },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.1",
     "express": "^5.1.0",

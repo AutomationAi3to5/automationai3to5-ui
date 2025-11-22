@@ -23,10 +23,15 @@
   </style>
 </head>
 <body>
-  <header style="padding: 2.2rem 2.5rem; background: var(--dark); border-bottom: 1.5px solid var(--secondary); display:flex; align-items:center; gap:2.2em">
+  <header style="padding: 2.2rem 2.5rem; background: var(--dark); border-bottom: 1.5px solid var(--secondary); display:flex; align-items:center; gap:2.2em; flex-wrap: wrap;">
     <img src="img/AI3to5_Logo.png" style="height:2.55rem; margin-right:1.3rem;">
-    <h1>AutomationAI3to5 Design System <span style="font-size:.65em; font-weight:400; color:var(--cyan)">UI Kit v1</span></h1>
-    <button class="btn btn-secondary" onclick="toggleTheme()" id="themeBtn" style="margin-left:auto;">Passer en mode clair</button>
+    <h1>AutomationAI3to5 Design System <span style="font-size:.65em; font-weight:400; color:var(--cyan)">UI Kit v1.0</span></h1>
+    <div style="margin-left:auto; display:flex; gap:1rem; flex-wrap: wrap;">
+      <a href="/components/" class="btn btn-secondary" style="text-decoration:none;">📦 Components</a>
+      <a href="/stories/" class="btn btn-secondary" style="text-decoration:none;">📚 Stories</a>
+      <a href="/playground/" class="btn btn-secondary" style="text-decoration:none;">🎮 Playground</a>
+      <button class="btn btn-secondary" onclick="toggleTheme()" id="themeBtn">Passer en mode clair</button>
+    </div>
   </header>
   <div class="layout">
     <!-- SIDEBAR -->
@@ -224,20 +229,41 @@
       <b>Utilisation:</b> Copie/colle le SVG prêt ci-dessus dans tout composant HTML statique (ou génère via React/Icon.jsx dans ton sandbox React).
       </div>
 
-      <!-- 12. Intégration React -->
+      <!-- 12. Documentation complète -->
+      <h2>📚 Documentation Complète</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:2rem;">
+        <div class="card">
+          <div class="card-header">📦 HTML Components</div>
+          <div>18+ composants HTML/CSS prêts : forms, navigation, feedback, containers</div>
+          <div class="card-footer"><a href="/components/" class="btn btn-primary" style="text-decoration:none;">Parcourir →</a></div>
+        </div>
+        <div class="card">
+          <div class="card-header">📚 Component Stories</div>
+          <div>43 stories avec variants, états et accessibilité</div>
+          <div class="card-footer"><a href="/stories/" class="btn btn-primary" style="text-decoration:none;">Consulter →</a></div>
+        </div>
+        <div class="card">
+          <div class="card-header">🎮 Interactive Playground</div>
+          <div>47 démos interactives d'icons, animations, responsive</div>
+          <div class="card-footer"><a href="/playground/" class="btn btn-primary" style="text-decoration:none;">Explorer →</a></div>
+        </div>
+      </div>
+
+      <!-- 13. Intégration React -->
       <h2>Démo interactive – Icônes React</h2>
       <div class="card">
         <div class="card-header">Application React - Kit d'Icônes Interactif</div>
         <div>
-          <p>Notre bibliothèque React d'icônes offre plus de 100 icônes personnalisables avec recherche en temps réel, contrôles de taille et de couleur.</p>
+          <p>Notre bibliothèque React d'icônes offre 470+ icônes SVG organisées en 27 catégories avec recherche en temps réel, contrôles de taille et de couleur.</p>
           <p style="font-size:.94em;color:var(--text-secondary);">
             <b>Note :</b> Pour des raisons techniques de proxy/cloud, l'interface interactive React s'ouvre dans un nouvel onglet. 
             Pour l’intégration en production (hébergement statique), elle pourra être embarquée en iframe.
           </p>
           <ul style="margin-top:0.5em;color:var(--text-secondary);">
-            <li>🔍 Recherche instantanée parmi toutes les icônes</li>
+            <li>🔍 Recherche instantanée parmi 470+ icônes</li>
             <li>🎨 Personnalisation de la taille, épaisseur et couleur</li>
             <li>📋 Copie du code React en un clic</li>
+            <li>📊 Organisation en 27 catégories thématiques</li>
             <li>📱 Interface responsive et intuitive</li>
           </ul>
         </div>
