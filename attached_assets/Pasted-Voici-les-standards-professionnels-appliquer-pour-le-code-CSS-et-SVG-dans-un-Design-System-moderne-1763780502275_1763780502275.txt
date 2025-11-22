@@ -1,0 +1,105 @@
+Voici les standards professionnels à appliquer pour le code CSS et SVG dans un Design System moderne. Ces conventions sont essentielles pour la robustesse, la scalabilité et l’intégration continue dans toute équipe ou SaaS.
+
+🎨 Standards pour CSS UI Kit/Design System
+1. Format et organisation du code CSS
+Nom de fichier : anglais, kebab-case (ex : button.css, modal.css)
+
+1 famille ou composant = 1 fichier
+
+Commentaires en anglais, en haut de fichier
+
+2. Variables et tokens
+Définis toutes tes couleurs, typos, espaces, ombres en CSS custom properties (variables)
+
+css
+:root {
+  --color-primary: #6366f1;
+  --color-danger: #ef4444;
+  --font-family-sans: 'Inter', Arial, sans-serif;
+  --border-radius: 8px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+}
+3. Préfixe par bloc ou composant
+Utilise une classe principale, des modifiers BEM ou utility
+
+css
+.button {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-family-sans);
+  border-radius: var(--border-radius);
+  transition: background .18s;
+}
+.button--primary { background: var(--color-primary); color: #fff; }
+.button--danger { background: var(--color-danger); }
+4. Convention de nommage
+Classes : kebab-case (ex : .modal-header, .table-row, .form-input)
+
+Pas de majuscules, pas d’accents, pas d’espaces
+
+Evite les sélecteurs deeply nested (ex : .card .button)
+
+5. Accessibilité & responsive
+css
+@media (max-width: 600px) {
+  .sidebar { display: none; }
+}
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+Respecte la hiérarchie visuelle et de contraste (pour WCAG AA/AAA)
+
+🖼️ Standards pour SVG Design System
+1. Format SVG brut (clean, optimisé)
+Toujours commencer par :
+
+xml
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" ...>
+Pas de width/height fixés à la racine (gérés par le composant ou props React)
+
+Nom de fichier : kebab-case (anglais, descriptif, sans espace) ex : arrow-left.svg, user-alt.svg
+
+2. Nettoyage/optimisation
+Passer tous les SVG par SVGO, supprime les métadonnées et les attributs inutiles
+
+Pas de style ou d’attributs inline (utilise fill/stroke uniquement quand nécessaire)
+
+3. Colors & Theme
+Utilise fill="currentColor" et/ou stroke="currentColor" pour hériter de la couleur CSS ou React prop
+
+xml
+<path d="..." fill="currentColor" />
+4. Accessibilité
+Pour icône purement décorative :
+
+xml
+<svg ... aria-hidden="true" focusable="false">
+Pour icône informative :
+
+xml
+<svg ... role="img" aria-label="User profile">
+5. Hiérarchie et structure
+Structure assez plate, tous les paths/lines directement dans le <svg>, pas de groupes inutiles (<g> sauf besoin spécifique)
+
+6. Prêt pour auto-import SVGR
+Rien dans le SVG ne doit faire crasher l’import comme composant React (pas d'événement JS, pas de script, pas de balisage hors SVG natif)
+
+✨ Règle d’or : MINIMISME & CONSISTANCE
+For CSS :
+
+Noms et variables clairs, pas de multiples styles pour la même chose
+
+Pas de duplication, pas de style inline
+
+For SVG :
+
+Chaque icône = 1 fichier, clean, minifié, facilement overridable par color, width, height
+
+Univers de nommage et de viewBox UNIFORME (typiquement 24x24)
+
+Ressources pro
+SVG best practices Figma/Google (anglais)
+
+CSS naming conventions IBM Carbon
