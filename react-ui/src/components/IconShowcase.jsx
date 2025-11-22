@@ -46,7 +46,14 @@ export default function IconShowcase() {
   }, [searchQuery, selectedCategory, allIcons]);
 
   const copyToClipboard = (iconName, category) => {
-    const code = `import Icon from '@/components/Icon';\n<Icon name="${iconName}" category="${category}" size={24} color="#6366f1" />`;
+    const PascalCase = iconName.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('');
+    const code = `// Option 1: Using Icon component
+import Icon from '@/components/Icon';
+<Icon name="${iconName}" category="${category}" size={24} color="#6366f1" />
+
+// Option 2: Direct import
+import { ${PascalCase}Icon } from '@/icons';
+<${PascalCase}Icon width={24} height={24} stroke="currentColor" />`;
     navigator.clipboard.writeText(code);
     setCopiedIcon(iconName);
     setTimeout(() => setCopiedIcon(null), 2000);
