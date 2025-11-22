@@ -8,6 +8,7 @@
     "dev": "node server.js",
     "react:dev": "cd react-ui && npm run dev",
     "start": "npm run dev",
+    "build": "bash build.sh",
     "components": "echo 'Components available at http://localhost:5000/components'",
     "stories": "echo 'Stories available at http://localhost:5000/stories'",
     "playground": "echo 'Playground available at http://localhost:5000/playground'"
