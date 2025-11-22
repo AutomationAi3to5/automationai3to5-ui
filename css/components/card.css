@@ -1,0 +1,16 @@
+/* Card Component - Container with consistent styling */
+.card {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card:hover { box-shadow: var(--shadow-md); }
+.card-header { padding: var(--space-lg); border-bottom: 1px solid var(--border-color); font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold); color: var(--text-primary); }
+.card-body { padding: var(--space-lg); color: var(--text-primary); }
+.card-footer { padding: var(--space-lg); border-top: 1px solid var(--border-color); background-color: var(--bg-secondary); display: flex; gap: var(--space-md); justify-content: flex-end; }
+.card--elevated { box-shadow: var(--shadow-lg); }
+.card--flat { box-shadow: none; border: none; }

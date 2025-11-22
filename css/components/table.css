@@ -1,0 +1,23 @@
+/* Table Component - Data display */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-base);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.table thead { background-color: var(--bg-secondary); border-bottom: 2px solid var(--border-color); }
+.table th { padding: var(--space-md) var(--space-lg); text-align: left; font-weight: var(--font-weight-semibold); color: var(--text-primary); user-select: none; }
+.table th[data-sortable] { cursor: pointer; }
+.table tbody tr { border-bottom: 1px solid var(--border-color); transition: background-color var(--transition-base); }
+.table tbody tr:hover { background-color: var(--bg-secondary); }
+.table td { padding: var(--space-md) var(--space-lg); }
+.table tbody tr:last-child { border-bottom: none; }
+.table--striped tbody tr:nth-child(odd) { background-color: var(--bg-secondary); }
+.table--compact th, .table--compact td { padding: var(--space-sm) var(--space-md); font-size: var(--font-size-sm); }
+
+@media (max-width: 768px) {
+  .table { font-size: var(--font-size-sm); }
+  .table th, .table td { padding: var(--space-sm) var(--space-md); }
+}
