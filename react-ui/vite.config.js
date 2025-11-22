@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [svgr(), react()],
   base: '/react-ui/',  // CRITICAL: This makes all assets use /react-ui/ prefix
   server: {
     host: '0.0.0.0',
