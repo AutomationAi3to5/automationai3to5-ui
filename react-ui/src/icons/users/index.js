@@ -1,0 +1,5 @@
+export { default as user } from './user.svg?react'
+export { default as users } from './users.svg?react'
+export { default as profile } from './profile.svg?react'
+export { default as avatar } from './avatar.svg?react'
+export { default as team } from './team.svg?react'

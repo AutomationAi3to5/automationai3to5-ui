@@ -1,0 +1,7 @@
+export { default as download } from './download.svg?react'
+export { default as upload } from './upload.svg?react'
+export { default as edit } from './edit.svg?react'
+export { default as delete } from './delete.svg?react'
+export { default as copy } from './copy.svg?react'
+export { default as save } from './save.svg?react'
+export { default as refresh } from './refresh.svg?react'

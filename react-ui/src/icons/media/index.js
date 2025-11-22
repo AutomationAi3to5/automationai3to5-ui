@@ -1,0 +1,5 @@
+export { default as image } from './image.svg?react'
+export { default as video } from './video.svg?react'
+export { default as camera } from './camera.svg?react'
+export { default as play } from './play.svg?react'
+export { default as pause } from './pause.svg?react'

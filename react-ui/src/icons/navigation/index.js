@@ -1,0 +1,7 @@
+export { default as home } from './home.svg?react'
+export { default as menu } from './menu.svg?react'
+export { default as close } from './close.svg?react'
+export { default as search } from './search.svg?react'
+export { default as settings } from './settings.svg?react'
+export { default as back } from './back.svg?react'
+export { default as forward } from './forward.svg?react'
