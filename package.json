@@ -4,6 +4,16 @@
   "type": "module",
   "description": "Professional Design System - 470+ SVG icons, 50+ HTML components, React integration, comprehensive documentation",
   "main": "server.js",
+  "files": [
+    "css",
+    "public",
+    "server.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "node server.js",
     "react:dev": "cd react-ui && npm run dev",

@@ -1,15 +1,28 @@
 {
-  "name": "automationai3to5-ui-react",
+  "name": "@automationai/design-system-react",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "type": "module",
-  "description": "UI Kit / Design system interactif pour AutomationAI3to5 (React)",
+  "description": "React components and icon library for AutomationAI3to5 Design System",
   "author": "automationai3to5",
   "repository": {
     "type": "git",
     "url": "https://github.com/AutomationAi3to5/automationai3to5-ui"
   },
-  "main": "src/index.jsx",
+  "main": "dist/index.js",
+  "exports": {
+    ".": "./dist/index.js",
+    "./icons": "./dist/icons.js",
+    "./components": "./dist/components.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
