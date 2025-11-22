@@ -1,15 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="../css/design-system.css">
-  <title>Buttons – Stories</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button - Design System Stories</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <style>
+    .story-container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .story-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .story-description {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .story-section {
+      margin-bottom: 3rem;
+      padding: 1.5rem;
+      border: 1px solid #eee;
+      border-radius: 8px;
+    }
+    .story-section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .story-variant {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0.5rem 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Boutons – Sandbox</h1>
-  <button class="btn btn-primary">Primary</button>
-  <button class="btn btn-secondary">Secondary</button>
-  <button class="btn btn-danger" disabled>Danger disabled</button>
-  <p>Tabulez entre eux pour tester les styles de focus/accessibilité.</p>
+  <div class="story-container">
+    <h1 class="story-title">Button Component</h1>
+    <p class="story-description">Stories for the Button component showcasing different variants and use cases.</p>
+    
+    <div class="story-section">
+      <h2 class="story-section-title">Default</h2>
+      <div class="story-variant">
+        <!-- Default Button instance here -->
+      </div>
+    </div>
+
+    <div class="story-section">
+      <h2 class="story-section-title">Variants</h2>
+      <div class="story-variant">
+        <!-- Variant 1 -->
+      </div>
+      <div class="story-variant">
+        <!-- Variant 2 -->
+      </div>
+      <div class="story-variant">
+        <!-- Variant 3 -->
+      </div>
+    </div>
+
+    <div class="story-section">
+      <h2 class="story-section-title">States</h2>
+      <div class="story-variant">
+        <!-- Default state -->
+      </div>
+      <div class="story-variant">
+        <!-- Hover state -->
+      </div>
+      <div class="story-variant">
+        <!-- Disabled state -->
+      </div>
+      <div class="story-variant">
+        <!-- Active state -->
+      </div>
+    </div>
+
+    <div class="story-section">
+      <h2 class="story-section-title">Responsive</h2>
+      <div class="story-variant">
+        <!-- Responsive variant -->
+      </div>
+    </div>
+
+    <div class="story-section">
+      <h2 class="story-section-title">Accessibility</h2>
+      <div class="story-variant">
+        <!-- Accessible implementation -->
+      </div>
+    </div>
+  </div>
 </body>
 </html>
-

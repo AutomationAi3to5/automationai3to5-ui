@@ -1,9 +1,60 @@
+#!/bin/bash
+
+# Create component stories
+components=(
+  "Accordion"
+  "Alert"
+  "Badge"
+  "Breadcrumb"
+  "Button"
+  "Card"
+  "Carousel"
+  "Checkbox"
+  "Collapse"
+  "Datepicker"
+  "Dropdown"
+  "Form"
+  "Gallery"
+  "Grid"
+  "Header"
+  "Hero"
+  "Icon"
+  "Input"
+  "Label"
+  "Link"
+  "List"
+  "Loading"
+  "Modal"
+  "Navbar"
+  "Notification"
+  "Pagination"
+  "Progress"
+  "RadioButton"
+  "Select"
+  "Sidebar"
+  "Skeleton"
+  "Spinner"
+  "Switch"
+  "Table"
+  "Tabs"
+  "Tag"
+  "Text"
+  "TextArea"
+  "Timeline"
+  "Toast"
+  "Toggle"
+  "Tooltip"
+  "VideoEmbed"
+)
+
+for component in "${components[@]}"; do
+  cat > "${component}.stories.html" << STORY
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accordion - Design System Stories</title>
+  <title>${component} - Design System Stories</title>
   <link rel="stylesheet" href="../../css/main.css">
   <style>
     .story-container {
@@ -43,13 +94,13 @@
 </head>
 <body>
   <div class="story-container">
-    <h1 class="story-title">Accordion Component</h1>
-    <p class="story-description">Stories for the Accordion component showcasing different variants and use cases.</p>
+    <h1 class="story-title">${component} Component</h1>
+    <p class="story-description">Stories for the ${component} component showcasing different variants and use cases.</p>
     
     <div class="story-section">
       <h2 class="story-section-title">Default</h2>
       <div class="story-variant">
-        <!-- Default Accordion instance here -->
+        <!-- Default ${component} instance here -->
       </div>
     </div>
 
@@ -98,3 +149,7 @@
   </div>
 </body>
 </html>
+STORY
+done
+
+echo "✅ Created ${#components[@]} component stories"

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Stories - Design System</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: #f5f5f5; }
+    .stories-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .header { margin-bottom: 3rem; }
+    .header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .header p { font-size: 1.1rem; color: #666; }
+    .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+    .story-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; }
+    .story-card:hover { transform: translateY(-4px); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); }
+    .story-name { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .story-description { color: #666; font-size: 0.9rem; margin-bottom: 1rem; }
+    .story-link { display: inline-block; color: #0066cc; text-decoration: none; font-weight: 500; }
+    .story-link:hover { text-decoration: underline; }
+    .categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .category { padding: 0.75rem 1rem; background: #e3f2fd; border-left: 4px solid #0066cc; }
+    .category strong { display: block; margin-bottom: 0.25rem; }
+  </style>
+</head>
+<body>
+  <div class="stories-container">
+    <div class="header">
+      <h1>📚 Component Stories</h1>
+      <p>Interactive documentation for all design system components</p>
+    </div>
+
+    <div class="categories">
+      <div class="category"><strong>Forms & Inputs</strong> Checkbox, Input, Label, RadioButton, Select, TextArea, Toggle</div>
+      <div class="category"><strong>Navigation</strong> Breadcrumb, Navbar, Pagination, Sidebar, Tabs</div>
+      <div class="category"><strong>Feedback</strong> Alert, Badge, Loading, Notification, Progress, Spinner, Toast</div>
+      <div class="category"><strong>Containers</strong> Accordion, Card, Carousel, Collapse, Modal</div>
+      <div class="category"><strong>Content</strong> Header, Hero, Icon, Link, List, Table, Text, Timeline</div>
+      <div class="category"><strong>Utilities</strong> Dropdown, Gallery, Grid, Skeleton, Tag, Tooltip, VideoEmbed</div>
+    </div>
+
+    <div class="stories-grid">
+      <a href="Accordion.stories.html" class="story-card"><div class="story-name">🎯 Accordion</div><div class="story-description">Expandable content sections</div><span class="story-link">View Story →</span></a>
+      <a href="Alert.stories.html" class="story-card"><div class="story-name">⚠️ Alert</div><div class="story-description">Alert messages and notifications</div><span class="story-link">View Story →</span></a>
+      <a href="Badge.stories.html" class="story-card"><div class="story-name">🏷️ Badge</div><div class="story-description">Status badges and labels</div><span class="story-link">View Story →</span></a>
+      <a href="Breadcrumb.stories.html" class="story-card"><div class="story-name">🗺️ Breadcrumb</div><div class="story-description">Navigation breadcrumbs</div><span class="story-link">View Story →</span></a>
+      <a href="Button.stories.html" class="story-card"><div class="story-name">🔘 Button</div><div class="story-description">Interactive button component</div><span class="story-link">View Story →</span></a>
+      <a href="Card.stories.html" class="story-card"><div class="story-name">📇 Card</div><div class="story-description">Content card container</div><span class="story-link">View Story →</span></a>
+      <a href="Carousel.stories.html" class="story-card"><div class="story-name">🎠 Carousel</div><div class="story-description">Image carousel component</div><span class="story-link">View Story →</span></a>
+      <a href="Checkbox.stories.html" class="story-card"><div class="story-name">☑️ Checkbox</div><div class="story-description">Checkbox input element</div><span class="story-link">View Story →</span></a>
+      <a href="Collapse.stories.html" class="story-card"><div class="story-name">📦 Collapse</div><div class="story-description">Collapsible content</div><span class="story-link">View Story →</span></a>
+      <a href="Datepicker.stories.html" class="story-card"><div class="story-name">📅 Datepicker</div><div class="story-description">Date selection component</div><span class="story-link">View Story →</span></a>
+      <a href="Dropdown.stories.html" class="story-card"><div class="story-name">⬇️ Dropdown</div><div class="story-description">Dropdown menu</div><span class="story-link">View Story →</span></a>
+      <a href="Form.stories.html" class="story-card"><div class="story-name">📝 Form</div><div class="story-description">Complete form component</div><span class="story-link">View Story →</span></a>
+      <a href="Gallery.stories.html" class="story-card"><div class="story-name">🖼️ Gallery</div><div class="story-description">Image gallery grid</div><span class="story-link">View Story →</span></a>
+      <a href="Grid.stories.html" class="story-card"><div class="story-name">⊞ Grid</div><div class="story-description">Layout grid system</div><span class="story-link">View Story →</span></a>
+      <a href="Header.stories.html" class="story-card"><div class="story-name">📌 Header</div><div class="story-description">Page header component</div><span class="story-link">View Story →</span></a>
+      <a href="Hero.stories.html" class="story-card"><div class="story-name">🎪 Hero</div><div class="story-description">Hero banner section</div><span class="story-link">View Story →</span></a>
+      <a href="Icon.stories.html" class="story-card"><div class="story-name">🎨 Icon</div><div class="story-description">Icon showcase</div><span class="story-link">View Story →</span></a>
+      <a href="Input.stories.html" class="story-card"><div class="story-name">⌨️ Input</div><div class="story-description">Text input field</div><span class="story-link">View Story →</span></a>
+      <a href="Label.stories.html" class="story-card"><div class="story-name">🏷️ Label</div><div class="story-description">Form labels</div><span class="story-link">View Story →</span></a>
+      <a href="Link.stories.html" class="story-card"><div class="story-name">🔗 Link</div><div class="story-description">Hyperlink component</div><span class="story-link">View Story →</span></a>
+      <a href="List.stories.html" class="story-card"><div class="story-name">📋 List</div><div class="story-description">List component</div><span class="story-link">View Story →</span></a>
+      <a href="Loading.stories.html" class="story-card"><div class="story-name">⏳ Loading</div><div class="story-description">Loading state</div><span class="story-link">View Story →</span></a>
+      <a href="Modal.stories.html" class="story-card"><div class="story-name">🗂️ Modal</div><div class="story-description">Modal dialog component</div><span class="story-link">View Story →</span></a>
+      <a href="Navbar.stories.html" class="story-card"><div class="story-name">📱 Navbar</div><div class="story-description">Navigation bar</div><span class="story-link">View Story →</span></a>
+      <a href="Notification.stories.html" class="story-card"><div class="story-name">🔔 Notification</div><div class="story-description">Notification component</div><span class="story-link">View Story →</span></a>
+      <a href="Pagination.stories.html" class="story-card"><div class="story-name">📄 Pagination</div><div class="story-description">Page navigation</div><span class="story-link">View Story →</span></a>
+      <a href="Progress.stories.html" class="story-card"><div class="story-name">📈 Progress</div><div class="story-description">Progress bar</div><span class="story-link">View Story →</span></a>
+      <a href="RadioButton.stories.html" class="story-card"><div class="story-name">◉ RadioButton</div><div class="story-description">Radio button input</div><span class="story-link">View Story →</span></a>
+      <a href="Select.stories.html" class="story-card"><div class="story-name">✔️ Select</div><div class="story-description">Select dropdown</div><span class="story-link">View Story →</span></a>
+      <a href="Sidebar.stories.html" class="story-card"><div class="story-name">≡ Sidebar</div><div class="story-description">Side navigation</div><span class="story-link">View Story →</span></a>
+      <a href="Skeleton.stories.html" class="story-card"><div class="story-name">💀 Skeleton</div><div class="story-description">Loading skeleton</div><span class="story-link">View Story →</span></a>
+      <a href="Spinner.stories.html" class="story-card"><div class="story-name">⚙️ Spinner</div><div class="story-description">Loading spinner</div><span class="story-link">View Story →</span></a>
+      <a href="Switch.stories.html" class="story-card"><div class="story-name">🔄 Switch</div><div class="story-description">Toggle switch</div><span class="story-link">View Story →</span></a>
+      <a href="Table.stories.html" class="story-card"><div class="story-name">📊 Table</div><div class="story-description">Data table component</div><span class="story-link">View Story →</span></a>
+      <a href="Tabs.stories.html" class="story-card"><div class="story-name">📑 Tabs</div><div class="story-description">Tab navigation</div><span class="story-link">View Story →</span></a>
+      <a href="Tag.stories.html" class="story-card"><div class="story-name">🏷️ Tag</div><div class="story-description">Tag component</div><span class="story-link">View Story →</span></a>
+      <a href="Text.stories.html" class="story-card"><div class="story-name">📝 Text</div><div class="story-description">Text typography</div><span class="story-link">View Story →</span></a>
+      <a href="TextArea.stories.html" class="story-card"><div class="story-name">📄 TextArea</div><div class="story-description">Multi-line text input</div><span class="story-link">View Story →</span></a>
+      <a href="Timeline.stories.html" class="story-card"><div class="story-name">⏱️ Timeline</div><div class="story-description">Timeline component</div><span class="story-link">View Story →</span></a>
+      <a href="Toast.stories.html" class="story-card"><div class="story-name">🍞 Toast</div><div class="story-description">Toast notifications</div><span class="story-link">View Story →</span></a>
+      <a href="Toggle.stories.html" class="story-card"><div class="story-name">⏻️ Toggle</div><div class="story-description">Toggle component</div><span class="story-link">View Story →</span></a>
+      <a href="Tooltip.stories.html" class="story-card"><div class="story-name">💬 Tooltip</div><div class="story-description">Tooltip component</div><span class="story-link">View Story →</span></a>
+      <a href="VideoEmbed.stories.html" class="story-card"><div class="story-name">🎬 VideoEmbed</div><div class="story-description">Embedded video</div><span class="story-link">View Story →</span></a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,9 +1,65 @@
+#!/bin/bash
+
+# Create playground demos
+playgrounds=(
+  "color-palette"
+  "dark-light-toggle"
+  "icon-showcase"
+  "form-validation"
+  "responsive-demo"
+  "svg-animations"
+  "interactive-components"
+  "animation-showcase"
+  "grid-system"
+  "typography-showcase"
+  "spacing-scale"
+  "shadow-showcase"
+  "button-variations"
+  "modal-variations"
+  "card-layouts"
+  "table-examples"
+  "navigation-patterns"
+  "footer-variations"
+  "hero-sections"
+  "testimonial-section"
+  "pricing-table"
+  "feature-cards"
+  "stats-showcase"
+  "timeline-examples"
+  "accordion-demo"
+  "carousel-demo"
+  "gallery-demo"
+  "form-elements"
+  "input-states"
+  "notification-demo"
+  "toast-demo"
+  "tooltip-demo"
+  "dropdown-demo"
+  "breadcrumb-patterns"
+  "pagination-examples"
+  "tabs-demo"
+  "steps-demo"
+  "skeleton-loading"
+  "gradient-showcase"
+  "border-radius-scale"
+  "animation-transitions"
+  "accessibility-demo"
+  "performance-test"
+  "cross-browser-test"
+  "mobile-responsive"
+  "integration-modal-react"
+  "component-interaction"
+)
+
+for playground in "${playgrounds[@]}"; do
+  filename=$(echo "$playground" | sed 's/-/_/g')
+  cat > "${playground}.html" << PLAYGROUND
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>integration-modal-react - Design System Playground</title>
+  <title>${playground} - Design System Playground</title>
   <link rel="stylesheet" href="../../css/main.css">
   <style>
     .playground-container {
@@ -59,7 +115,7 @@
 <body>
   <div class="playground-container">
     <div class="playground-header">
-      <h1 class="playground-title">integration-modal-react</h1>
+      <h1 class="playground-title">${playground}</h1>
       <p class="playground-description">Interactive playground for testing and experimentation</p>
     </div>
 
@@ -104,3 +160,7 @@
   </script>
 </body>
 </html>
+PLAYGROUND
+done
+
+echo "✅ Created ${#playgrounds[@]} playground demos"
