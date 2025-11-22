@@ -1,0 +1,6 @@
+/* Collapsibles - Collapsible content styles */
+.collapsible { border: 1px solid var(--border-color); border-radius: var(--radius-md); }
+.collapsible-trigger { padding: var(--space-md); background: var(--bg-primary); border: none; cursor: pointer; width: 100%; text-align: left; font-weight: 600; }
+.collapsible-trigger:hover { background: var(--bg-secondary); }
+.collapsible-content { display: none; padding: var(--space-md); }
+.collapsible-content.open { display: block; }

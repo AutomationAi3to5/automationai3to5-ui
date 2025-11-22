@@ -1,0 +1,2 @@
+/* Time pickers - Time input styles */
+input[type="time"] { padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); }

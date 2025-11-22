@@ -1,0 +1,5 @@
+/* Carousels - Carousel/slider styles */
+.carousel { position: relative; overflow: hidden; border-radius: var(--radius-lg); }
+.carousel-inner { display: flex; transition: transform var(--transition-base); }
+.carousel-item { min-width: 100%; }
+.carousel-control { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 1rem; cursor: pointer; z-index: 10; }

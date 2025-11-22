@@ -1,0 +1,14 @@
+/* Responsive design - Mobile first */
+@media (max-width: 640px) {
+  body { font-size: var(--font-size-sm); }
+  h1 { font-size: var(--font-size-2xl); }
+  .hidden-sm { display: none; }
+  .container { padding: 0 var(--space-sm); }
+}
+@media (min-width: 768px) {
+  .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hidden-md { display: none; }
+}
+@media (min-width: 1024px) {
+  .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}

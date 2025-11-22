@@ -1,0 +1,5 @@
+/* Inputs - Text input styles */
+.input-group { display: flex; align-items: center; }
+.input-group input { flex: 1; }
+.input-addon { padding: 0.5rem 1rem; background: var(--bg-secondary); border: 1px solid var(--border-color); }
+input[type="text"], input[type="email"], input[type="password"] { padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); }

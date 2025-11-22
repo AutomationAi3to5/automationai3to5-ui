@@ -1,0 +1,10 @@
+/* Theme - Light/dark mode definitions */
+:root {
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+  }
+}

@@ -1,0 +1,4 @@
+/* Search bars - Search input styles */
+.search-bar { position: relative; }
+.search-bar input { padding-left: 2.5rem; }
+.search-bar::before { content: '🔍'; position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); }

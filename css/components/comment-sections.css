@@ -1,0 +1,5 @@
+/* Comment sections - Comment styles */
+.comment { padding: var(--space-md) 0; border-bottom: 1px solid var(--border-color); }
+.comment-author { font-weight: 600; }
+.comment-date { color: var(--text-secondary); font-size: var(--font-size-sm); }
+.comment-text { margin-top: var(--space-sm); }

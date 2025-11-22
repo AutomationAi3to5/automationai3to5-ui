@@ -1,0 +1,7 @@
+/* Dropdowns - Dropdown menu styles */
+.dropdown { position: relative; display: inline-block; }
+.dropdown-trigger { cursor: pointer; padding: var(--space-sm) var(--space-md); border: 1px solid var(--border-color); border-radius: var(--radius-md); background: var(--bg-primary); }
+.dropdown-menu { position: absolute; top: 100%; left: 0; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-md); min-width: 200px; display: none; z-index: 100; }
+.dropdown-menu.open { display: block; }
+.dropdown-item { padding: var(--space-sm) var(--space-md); cursor: pointer; text-decoration: none; color: var(--text-primary); }
+.dropdown-item:hover { background: var(--bg-secondary); }

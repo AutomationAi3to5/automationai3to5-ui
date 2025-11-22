@@ -1,0 +1,5 @@
+/* Blog posts - Blog post styles */
+.blog-post { padding: var(--space-lg); }
+.blog-post-date { color: var(--text-secondary); font-size: var(--font-size-sm); }
+.blog-post-title { font-size: var(--font-size-2xl); font-weight: 700; margin: var(--space-md) 0; }
+.blog-post-excerpt { color: var(--text-secondary); }

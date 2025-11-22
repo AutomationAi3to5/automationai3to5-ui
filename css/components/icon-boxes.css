@@ -1,0 +1,4 @@
+/* Icon boxes - Icon box styles */
+.icon-box { text-align: center; padding: var(--space-lg); }
+.icon-box-icon { font-size: var(--font-size-4xl); margin-bottom: var(--space-md); }
+.icon-box-title { font-weight: 600; margin-bottom: var(--space-sm); }

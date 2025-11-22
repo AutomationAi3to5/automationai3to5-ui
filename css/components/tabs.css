@@ -1,0 +1,7 @@
+/* Tabs - Tab navigation styles */
+.tabs { display: flex; border-bottom: 2px solid var(--border-color); gap: 0; list-style: none; padding: 0; margin: 0; }
+.tab { padding: var(--space-md) var(--space-lg); cursor: pointer; border: none; background: none; font-weight: 500; color: var(--text-secondary); transition: all var(--transition-base); border-bottom: 2px solid transparent; margin-bottom: -2px; }
+.tab:hover { color: var(--text-primary); }
+.tab.active { color: var(--color-primary); border-color: var(--color-primary); }
+.tab-content { display: none; padding: var(--space-md) 0; }
+.tab-content.active { display: block; }

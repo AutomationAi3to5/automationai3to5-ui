@@ -1,0 +1,6 @@
+/* Badges - Status badge styles */
+.badge { display: inline-flex; align-items: center; padding: 0.25rem 0.75rem; font-size: var(--font-size-xs); font-weight: 600; border-radius: 9999px; }
+.badge-primary { background: var(--color-primary); color: white; }
+.badge-success { background: var(--color-success); color: white; }
+.badge-danger { background: var(--color-danger); color: white; }
+.badge-warning { background: var(--color-warning); color: white; }

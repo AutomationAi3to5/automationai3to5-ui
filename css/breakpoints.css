@@ -1,0 +1,4 @@
+/* Breakpoints - Media query breakpoints */
+@media (max-width: 640px) { .hidden-sm { display: none; } }
+@media (max-width: 768px) { .hidden-md { display: none; } }
+@media (min-width: 1024px) { .hidden-lg { display: none; } }

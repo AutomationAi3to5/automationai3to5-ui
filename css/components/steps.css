@@ -1,0 +1,6 @@
+/* Steps - Step indicator styles */
+.steps { display: flex; }
+.step { flex: 1; text-align: center; position: relative; }
+.step-number { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-secondary); display: inline-flex; align-items: center; justify-content: center; font-weight: 600; }
+.step.active .step-number { background: var(--color-primary); color: white; }
+.step::after { content: ''; position: absolute; top: 20px; left: 50%; width: 50%; height: 2px; background: var(--border-color); }

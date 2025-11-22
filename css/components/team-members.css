@@ -1,0 +1,5 @@
+/* Team members - Team member card styles */
+.team-member { text-align: center; }
+.team-member-image { width: 150px; height: 150px; border-radius: 50%; margin: 0 auto var(--space-md); object-fit: cover; }
+.team-member-name { font-weight: 600; }
+.team-member-role { color: var(--text-secondary); }

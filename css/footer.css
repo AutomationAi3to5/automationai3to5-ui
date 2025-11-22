@@ -1,0 +1,2 @@
+/* Footer - Page footer styles */
+footer { background: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: var(--space-2xl) var(--space-lg); margin-top: var(--space-3xl); }

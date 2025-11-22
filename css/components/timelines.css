@@ -1,0 +1,5 @@
+/* Timelines - Timeline styles */
+.timeline { position: relative; padding: var(--space-lg) 0; }
+.timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: var(--border-color); }
+.timeline-item { margin-left: 60px; margin-bottom: var(--space-lg); position: relative; }
+.timeline-item::before { content: ''; position: absolute; left: -50px; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: var(--color-primary); }

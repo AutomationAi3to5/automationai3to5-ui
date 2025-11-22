@@ -1,0 +1,5 @@
+/* Pricing tables - Pricing table styles */
+.pricing-table { width: 100%; border-collapse: collapse; }
+.pricing-table thead { background: var(--bg-secondary); }
+.pricing-table th, .pricing-table td { padding: var(--space-md) var(--space-lg); border-bottom: 1px solid var(--border-color); }
+.pricing-table tbody tr:hover { background: var(--bg-secondary); }

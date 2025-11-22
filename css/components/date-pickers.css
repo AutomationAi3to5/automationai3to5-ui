@@ -1,0 +1,2 @@
+/* Date pickers - Date input styles */
+input[type="date"], input[type="time"], input[type="datetime-local"] { padding: 0.5rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); }

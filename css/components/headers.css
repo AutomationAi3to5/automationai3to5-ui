@@ -1,0 +1,3 @@
+/* Headers - Header/Hero styles */
+.header { padding: var(--space-2xl) var(--space-lg); background: var(--bg-secondary); border-bottom: 1px solid var(--border-color); }
+.header h1 { margin: 0; }

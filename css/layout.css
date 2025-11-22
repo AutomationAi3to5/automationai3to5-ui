@@ -1,0 +1,8 @@
+/* Layout - Structure and positioning */
+html, body { height: 100%; }
+body { display: flex; flex-direction: column; }
+main { flex: 1; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-md); }
+.wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.grid { display: grid; gap: var(--space-md); }
+.flex { display: flex; gap: var(--space-md); }

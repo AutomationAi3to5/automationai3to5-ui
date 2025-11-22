@@ -1,0 +1,7 @@
+/* Accordions - Accordion styles */
+.accordion { border: 1px solid var(--border-color); border-radius: var(--radius-lg); overflow: hidden; }
+.accordion-item { border-bottom: 1px solid var(--border-color); }
+.accordion-trigger { width: 100%; padding: var(--space-lg); background: var(--bg-primary); border: none; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; text-align: left; }
+.accordion-trigger:hover { background: var(--bg-secondary); }
+.accordion-content { max-height: 0; overflow: hidden; transition: max-height var(--transition-base); }
+.accordion-trigger[aria-expanded="true"] + .accordion-content { max-height: 1000px; }

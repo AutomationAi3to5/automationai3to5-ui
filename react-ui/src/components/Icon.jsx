@@ -17,9 +17,9 @@ const Icon = ({
   alt = '',
   className = '',
   onClick = null,
-  aria-label = null,
   ...props
 }) => {
+  const ariaLabel = props['aria-label'] || null;
   const [svgContent, setSvgContent] = useState(null);
   const [error, setError] = useState(false);
 
@@ -50,8 +50,8 @@ const Icon = ({
       stroke={color}
       fill={color}
       className={`icon ${className}`}
-      aria-label={aria-label || alt}
-      aria-hidden={!alt && !aria-label}
+      aria-label={ariaLabel || alt}
+      aria-hidden={!alt && !ariaLabel}
       focusable={Boolean(onClick)}
       onClick={onClick}
       style={{ cursor: onClick ? 'pointer' : 'default' }}
